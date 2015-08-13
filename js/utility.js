@@ -1,14 +1,9 @@
 // create question class
-
-var question, answers, rightAnswer;
-
 function Questions(question, answers, rightAnswer) {
   this.question = question;
   this.answers = answers;
   this.rightAnswer = rightAnswer;
 }
-
-
 
 // Create first question
 questionOne = new Questions(
@@ -48,7 +43,7 @@ questionThree = new Questions(
 
 // Create fourth question
 questionFour = new Questions(
-  "Which symbol is used for comments in JavaScript?",
+  "Which of these is used for comments in JavaScript?",
   {
     1: "<!-- -->",
     2: "*/ /*",
@@ -130,3 +125,46 @@ questionTen = new Questions(
   },
   4
 );
+
+// Create array to hold questions.
+var questionArr =
+[
+  questionOne,
+  questionTwo,
+  questionThree,
+  questionFour,
+  questionFive,
+  questionSix,
+  questionSeven,
+  questionEight,
+  questionNine,
+  questionTen
+];
+
+// function to check answer
+function check(questions) {
+  if (userInput === questions[this.rightAnswer]) {
+    // remove question from array.
+    alert("Nice work!");
+    // Advance to next question.
+    // run specialQuestion.
+  }
+  else {
+    // Wrong answer, try again!
+    alert("Sorry, try again!");
+  }
+}
+
+// on advance, determine if next question will be a 'special' question.
+function specialQuestion(questionArr) {
+  var specialOdds = Math.ceil(Math.random() * 4);
+  if (specialOdds === 2) {
+    // change question at first index to special question.
+    // give player item on correct answer.
+  }
+  else {
+    // normal question.
+  }
+}
+
+module.exports = Questions;

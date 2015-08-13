@@ -1,0 +1,57 @@
+/* Every position computer/player alike */
+.position {
+  width: 125px;
+  height: 116px;
+  margin: 1% 0 1% 0;
+  background-color: white;
+  border: solid black;
+  display: inline-block;
+  /*opacity: 0.5;*/
+  /*float: left;*/
+}
+/* Setting background image */
+body {
+background-image: url("../images/Super-Mario-Kart.jpg");
+/*background-repeat: no-repeat;*/
+}
+/* Additional styling for area around positions */
+section {
+  opacity: 0.8;
+}
+/* ^^^^^^^^^ */
+#playerPosition {
+  background-color: red;
+}
+#computerPosition {
+  background-color: green;
+  /*margin-top: 5%;*/
+}
+/* Styling to character buttons */
+.select-character {
+  position: relative;
+  margin: 0 auto;
+  top: 280px;
+  box-shadow: 50px 50px 113px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  /*width: 60px;
+  height: 50px;*/
+}
+/* Styling for questions area */
+.question-box {
+  position: relative;
+  top: 50px;
+  right: 10px;
+  margin-bottom: 2%;
+  background-color: black;
+  float: right;
+  width: 800px;
+  height: 400px;
+  opacity: 0.8;
+  box-shadow: 50px 50px 113px;
+}
+/* Make images same size as div when html is set */
+.image {
+  height: inherit;
+  width: inherit;
+}
