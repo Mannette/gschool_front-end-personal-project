@@ -1,76 +1,132 @@
 // create question class
+
+var question, answers, rightAnswer;
+
 function Questions(question, answers, rightAnswer) {
   this.question = question;
   this.answers = answers;
   this.rightAnswer = rightAnswer;
 }
 
+
+
 // Create first question
-questionOne = new Question(
-  "",
-  [{1: "", 2: "", 3: "", 4: ""}],
-  ""
+questionOne = new Questions(
+  "Which is a primitive in JavaScript?",
+  {
+    1: "Script",
+    2: "String",
+    3: "this",
+    4: "Java"
+  },
+  2
 );
 
 // Create second question
-questionTwo = new Question(
-  "",
-  [{1: "", 2: "", 3: "", 4: ""}],
-  ""
+questionTwo = new Questions(
+  "What does NaN mean?",
+  {
+    1: "BaNaNa",
+    2: "New at number",
+    3: "Nothing to see here",
+    4: "Not a number"
+  },
+  4
 );
 
 // Create third question
-questionThree = new Question(
-  "",
-  [{1: "", 2: "", 3: "", 4: ""}],
-  ""
+questionThree = new Questions(
+  "Which company developed JavaScript?",
+  {
+    1: "Netscape",
+    2: "Java",
+    3: "Java gods",
+    4: "twitter"
+  },
+  1
 );
 
 // Create fourth question
-questionFour = new Question(
-  "",
-  [{1: "", 2: "", 3: "", 4: ""}],
-  ""
+questionFour = new Questions(
+  "Which symbol is used for comments in JavaScript?",
+  {
+    1: "<!-- -->",
+    2: "*/ /*",
+    3: "//",
+    4: "```"
+  },
+  3
 );
 
 // Create fifth question
-questionFive = new Question(
-  "",
-  [{1: "", 2: "", 3: "", 4: ""}],
-  ""
+questionFive = new Questions(
+  "Which symbol means 'OR'?",
+  {
+    1: "?",
+    2: "||",
+    3: "/!/",
+    4: "&|"
+  },
+  2
 );
 
 // Create sixth question
-questionSix = new Question(
-  "",
-  [{1: "", 2: "", 3: "", 4: ""}],
-  ""
+questionSix = new Questions(
+  "Which one is a looping structure?",
+  {
+    1: "do-while",
+    2: "if",
+    3: "during",
+    4: "fizz-buzz"
+  },
+  1
 );
 
 // Create seventh question
-questionSeven = new Question(
-  "",
-  [{1: "", 2: "", 3: "", 4: ""}],
-  ""
+questionSeven = new Questions(
+  "What does '4' + '8' equal?",
+  {
+    1: "24",
+    2: "12",
+    3: "16",
+    4: "48"
+  },
+  4
 );
 
 // Create eigth question
-questionEight = new Question(
-  "",
-  [{1: "", 2: "", 3: "", 4: ""}],
-  ""
+questionEight = new Questions(
+  "What value does NULL represent?",
+  {
+    1: "0",
+    2: "None",
+    3: "< 0",
+    4: "> 0"
+  },
+  2
 );
 
 // Create ninth question
-questionNine = new Question(
-  "",
-  [{1: "", 2: "", 3: "", 4: ""}],
-  ""
+questionNine = new Questions(
+  "Which of these is a Boolean operator?",
+  {
+    1: "<",
+    2: ">",
+    3: "!",
+    4: "=="
+  },
+  3
 );
 
 // Create tenth question
-questionTen = new Question(
-  "",
-  [{1: "", 2: "", 3: "", 4: ""}],
-  ""
+questionTen = new Questions(
+  // change this question.
+  "What is my middle name?",
+  {
+    1: "Julian",
+    2: "Mark",
+    3: "Antonio",
+    4: "Roy"
+  },
+  4
 );
