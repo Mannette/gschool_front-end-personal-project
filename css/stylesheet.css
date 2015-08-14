@@ -4,8 +4,10 @@
   height: 116px;
   margin: 1% 0 1% 0;
   background-color: white;
-  border: solid black;
-  display: inline-block;
+  align-items: flex-end;
+  display: inline-flex;
+  /*border: solid black;
+  border-width: 1px;*/
   /*opacity: 0.5;*/
   /*float: left;*/
 }
@@ -19,13 +21,11 @@ section {
   opacity: 0.8;
 }
 /* ^^^^^^^^^ */
-#playerPosition {
-  background-color: red;
+.allPositions {
+  background-color: black;
+  flex-direction: row;
 }
-#computerPosition {
-  background-color: green;
-  /*margin-top: 5%;*/
-}
+
 /* Styling to character buttons */
 .select-character {
   position: relative;
@@ -54,4 +54,13 @@ section {
 .image {
   height: inherit;
   width: inherit;
+}
+
+.playerStart, .computerStart {
+  background-color: blue;
+  color: white;
+}
+
+.playerFinish, .computerFinish {
+  background-color: yellow;
 }
