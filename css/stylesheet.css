@@ -6,20 +6,18 @@
   background-color: white;
   align-items: flex-end;
   display: inline-flex;
-  /*border: solid black;
-  border-width: 1px;*/
-  /*opacity: 0.5;*/
-  /*float: left;*/
 }
-/* Setting background image */
+
+ /*Setting background image*/
 body {
 background-image: url("../images/Super-Mario-Kart.jpg");
-/*background-repeat: no-repeat;*/
 }
+
 /* Additional styling for area around positions */
 section {
   opacity: 0.8;
 }
+
 /* ^^^^^^^^^ */
 .allPositions {
   background-color: black;
@@ -27,15 +25,15 @@ section {
 }
 
 /* Styling to character buttons */
-.select-character {
+.characters {
   position: relative;
+  display: inline-block;
   margin: 0 auto;
-  top: 280px;
-  box-shadow: 50px 50px 113px;
+  font-size: 2em;
+  background-image: url("../images/simpleGradient.jpg");
   background-size: contain;
-  background-repeat: no-repeat;
-  /*width: 60px;
-  height: 50px;*/
+  width: 30%;
+  color: white;
 }
 /* Styling for questions area */
 .question-box {
@@ -48,7 +46,7 @@ section {
   width: 800px;
   height: 400px;
   opacity: 0.8;
-  box-shadow: 50px 50px 113px;
+  box-shadow: 50px 50px 113px rgb(0, 0, 0);
   color: yellow;
 }
 /* Make images same size as div when html is set */
@@ -69,8 +67,42 @@ section {
 .advanceButton {
   position: absolute;
   top: 88%;
-  /*left: 85%;*/
   height: 50px;
   width: 100%;
   opacity: 1;
+}
+
+.replay {
+  height: 100%;
+  width: 100%;
+  font-size: 4em;
+}
+
+.titleRules {
+  background-color: red;
+  margin: auto;
+  margin-top: 15%;
+  border: solid black;
+  width: 50%;
+  text-align: center;
+}
+
+.ready {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  width: 50%
+}
+
+.select-character {
+  box-shadow: 50px 50px 113px rgb(0, 0, 0);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.flag {
+  position: absolute;
+  z-index: -1;
+  background-size: cover;
+  top: 0;
 }

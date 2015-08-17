@@ -35,7 +35,7 @@ questionThree = new Questions(
   {
     1: "Netscape",
     2: "Java",
-    3: "Java gods",
+    3: "Apple geniuses",
     4: "twitter"
   },
   1
@@ -45,10 +45,10 @@ questionThree = new Questions(
 questionFour = new Questions(
   "Which of these is used for comments in JavaScript?",
   {
-    1: "<!-- -->",
+    1: "/-- --/",
     2: "*/ /*",
-    3: "//",
-    4: "```"
+    3: "/ /",
+    4: "` ` `"
   },
   3
 );
@@ -57,10 +57,10 @@ questionFour = new Questions(
 questionFive = new Questions(
   "Which symbol means 'OR'?",
   {
-    1: "?",
-    2: "||",
-    3: "/!/",
-    4: "&|"
+    1: "? ?",
+    2: "| |",
+    3: "/ ! /",
+    4: "& |"
   },
   2
 );
@@ -141,19 +141,197 @@ var questionArr =
   questionTen
 ];
 
+// -------------------- //
+// PLAYER MOVE FUNCTION //
+// -------------------- //
+// console.log('advance!');
+function playerMove() {
+
+  player = $('.playerCurrent').html();
+
+  // console.log(player);
+
+  // select index with character
+  var playerCurrent = $('.playerCurrent').index('.player');
+
+  // console.log(playerCurrent);
+// debugger;
+
+  // select next position
+  var nextPosition = playerCurrent + 1;
+
+  // console.log(nextPosition);
+// debugger;
+
+  // remove character from current position
+  // playerCurrent.removeClass('playerCurrent');
+  $('.playerCurrent').html('');
+  $('#playerPosition').children().removeClass('playerCurrent');
+
+  // move character to next position
+  var move = $('#playerPosition').children()[nextPosition];
+  $(move).addClass('playerCurrent');
+  move.innerHTML = player;
+}
+
 // function to check answer
-Questions.prototype.check = function (questionArr) {
-  if (userInput === questions[this.rightAnswer]) {
-    // remove question from array.
-    alert("Nice work!");
-    // Advance to next question.
-    // run specialQuestion.
-  }
-  else {
-    // Wrong answer, try again!
-    alert("Sorry, try again!");
-  }
+Questions.prototype.check = function () {
+  // var correct = false;
+  var userInput = parseInt($("input[type='radio'][name='answers']:checked").val());
+
+    if (userInput === this.rightAnswer) {
+      // alert("Nice work!");
+      var audioElement = document.createElement('audio');
+      audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/smb/smb_coin.wav');
+      audioElement.setAttribute('autoplay', 'autoplay');
+
+      $.get();
+
+      audioElement.addEventListener('load', function() {
+        audioElement.Play();
+      }, true);
+      // Advance to next question.
+      playerMove();
+      return true;
+    }
+    else {
+      // Wrong answer, try again!
+      var audioElement = document.createElement('audio');
+      audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/sm64/sm64_boo.wav');
+      audioElement.setAttribute('autoplay', 'autoplay');
+
+      $.get();
+
+      audioElement.addEventListener('load', function() {
+        audioElement.Play();
+      }, true);
+
+      // alert("Sorry, try again!");
+    }
 };
+
+// ------------------------------------ //
+// FUNCTIONS TO APPEND QUESTIONS TO DOM //
+// ------------------------------------ //
+function appendFirst () {
+  $('#questions').html(questionArr[0].question);
+
+  $('.question-option')[0].innerHTML = questionArr[0].answers[1];
+
+  $('.question-option')[1].innerHTML = questionArr[0].answers[2];
+
+  $('.question-option')[2].innerHTML = questionArr[0].answers[3];
+
+  $('.question-option')[3].innerHTML = questionArr[0].answers[4];
+}
+
+function appendSecond () {
+  $('#questions').html(questionArr[1].question);
+
+  $('.question-option')[0].innerHTML = questionArr[1].answers[1];
+
+  $('.question-option')[1].innerHTML = questionArr[1].answers[2];
+
+  $('.question-option')[2].innerHTML = questionArr[1].answers[3];
+
+  $('.question-option')[3].innerHTML = questionArr[1].answers[4];
+}
+
+function appendThird () {
+  $('#questions').html(questionArr[2].question);
+
+  $('.question-option')[0].innerHTML = questionArr[2].answers[1];
+
+  $('.question-option')[1].innerHTML = questionArr[2].answers[2];
+
+  $('.question-option')[2].innerHTML = questionArr[2].answers[3];
+
+  $('.question-option')[3].innerHTML = questionArr[2].answers[4];
+}
+
+function appendFourth () {
+  $('#questions').html(questionArr[3].question);
+
+  $('.question-option')[0].innerHTML = questionArr[3].answers[1];
+
+  $('.question-option')[1].innerHTML = questionArr[3].answers[2];
+
+  $('.question-option')[2].innerHTML = questionArr[3].answers[3];
+
+  $('.question-option')[3].innerHTML = questionArr[3].answers[4];
+}
+
+function appendFifth () {
+  $('#questions').html(questionArr[4].question);
+
+  $('.question-option')[0].innerHTML = questionArr[4].answers[1];
+
+  $('.question-option')[1].innerHTML = questionArr[4].answers[2];
+
+  $('.question-option')[2].innerHTML = questionArr[4].answers[3];
+
+  $('.question-option')[3].innerHTML = questionArr[4].answers[4];
+}
+
+function appendSixth () {
+  $('#questions').html(questionArr[5].question);
+
+  $('.question-option')[0].innerHTML = questionArr[5].answers[1];
+
+  $('.question-option')[1].innerHTML = questionArr[5].answers[2];
+
+  $('.question-option')[2].innerHTML = questionArr[5].answers[3];
+
+  $('.question-option')[3].innerHTML = questionArr[5].answers[4];
+}
+
+function appendSeventh () {
+  $('#questions').html(questionArr[6].question);
+
+  $('.question-option')[0].innerHTML = questionArr[6].answers[1];
+
+  $('.question-option')[1].innerHTML = questionArr[6].answers[2];
+
+  $('.question-option')[2].innerHTML = questionArr[6].answers[3];
+
+  $('.question-option')[3].innerHTML = questionArr[6].answers[4];
+}
+
+function appendEighth () {
+  $('#questions').html(questionArr[7].question);
+
+  $('.question-option')[0].innerHTML = questionArr[7].answers[1];
+
+  $('.question-option')[1].innerHTML = questionArr[7].answers[2];
+
+  $('.question-option')[2].innerHTML = questionArr[7].answers[3];
+
+  $('.question-option')[3].innerHTML = questionArr[7].answers[4];
+}
+
+function appendNinth () {
+  $('#questions').html(questionArr[8].question);
+
+  $('.question-option')[0].innerHTML = questionArr[8].answers[1];
+
+  $('.question-option')[1].innerHTML = questionArr[8].answers[2];
+
+  $('.question-option')[2].innerHTML = questionArr[8].answers[3];
+
+  $('.question-option')[3].innerHTML = questionArr[8].answers[4];
+}
+
+function appendTenth() {
+  $('#questions').html(questionArr[9].question);
+
+  $('.question-option')[0].innerHTML = questionArr[9].answers[1];
+
+  $('.question-option')[1].innerHTML = questionArr[9].answers[2];
+
+  $('.question-option')[2].innerHTML = questionArr[9].answers[3];
+
+  $('.question-option')[3].innerHTML = questionArr[9].answers[4];
+}
 
 // on advance, determine if next question will be a 'special' question.
 // function specialQuestion(questionArr) {

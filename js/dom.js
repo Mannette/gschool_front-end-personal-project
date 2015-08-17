@@ -1,12 +1,17 @@
 $(document).ready(function() {
-  console.log('sanity check');
+  // console.log('sanity check');
 
-  // append questions to question-box
-  function appendQuestion(questionArr) {
-    for (i = 0; i < questionArr.length; i++) {
-      $('.question-box').append(this.questions);
-    }
-  }
+  // ------------ //
+  // READY BUTTON //
+  // ------------ //
+  $('.ready').click(function() {
+    // console.log('this is a test.');
+    $('#raceElements').show();
+    $('#startScreen').hide();
+  });
+
+  $('#raceElements').hide();
+  $('#replay').hide();
 
   var mario = '<img class="image" src="images/Mario.jpg">';
   var luigi = '<img class="image" src="images/Luigi.jpg">';
@@ -36,8 +41,8 @@ $(document).ready(function() {
 
 
     // hide character images
-    $('#mario').hide();
-    $('#luigi').hide();
+    $('#characters').hide();
+    // $('#luigi').hide();
 
     // play sound
     var audioElement = document.createElement('audio');
@@ -52,7 +57,7 @@ $(document).ready(function() {
 
     // Begin quiz.
     // Append first question to question box.
-
+    appendFirst();
     // return player, computer;
 
   });
@@ -80,8 +85,8 @@ $(document).ready(function() {
     });
 
     // hide character images
-    $('#mario').hide();
-    $('#luigi').hide();
+    $('#characters').hide();
+    // $('#luigi').hide();
 
     // play sound
     var audioElement = document.createElement('audio');
@@ -96,54 +101,76 @@ $(document).ready(function() {
 
     // Begin quiz.
     // Append first question to question box.
-
+    appendFirst();
     // return player, computer;
 
   });
 
-  // -------------------- //
-  // PLAYER MOVE FUNCTION //
-  // -------------------- //
-  // console.log('advance!');
-  function playerMove() {
-
-    player = $('.playerCurrent').html();
-
-    // console.log(player);
-
-    // select index with character
-    var playerCurrent = $('.playerCurrent').index('.player');
-
-    // console.log(playerCurrent);
-  // debugger;
-
-    // select next position
-    var nextPosition = playerCurrent + 1;
-
-    // console.log(nextPosition);
-  // debugger;
-
-    // remove character from current position
-    // playerCurrent.removeClass('playerCurrent');
-    $('.playerCurrent').html('');
-    $('#playerPosition').children().removeClass('playerCurrent');
-
-    // move character to next position
-    var move = $('#playerPosition').children()[nextPosition];
-    $(move).addClass('playerCurrent');
-    move.innerHTML = player;
-  }
-
   // ----------------------- //
   // ** TRACK ADVANCEMENT ** //
   // ----------------------- //
-  // test advance button.
+  // advance button.
   $('#advance').click(function() {
+
+    var currentQuestion = $('#questions').html();
 
     // computer advancing
     cpuOne.computerAdvance();
+
     // player advancing
-    playerMove();
+    // playerMove();
+    if (currentQuestion === questionOne.question) {
+      if (questionOne.check() === true) {
+        appendSecond();
+      }
+    }
+    if (currentQuestion === questionTwo.question) {
+      if (questionTwo.check() === true) {
+        appendThird();
+      }
+    }
+    if (currentQuestion === questionThree.question) {
+      if (questionThree.check() === true) {
+        appendFourth();
+      }
+    }
+    if (currentQuestion === questionFour.question) {
+      if (questionFour.check() === true) {
+        appendFifth();
+      }
+    }
+    if (currentQuestion === questionFive.question) {
+      if (questionFive.check() === true) {
+        appendSixth();
+      }
+    }
+    if (currentQuestion === questionSix.question) {
+      if (questionSix.check() === true) {
+        appendSeventh();
+      }
+    }
+    if (currentQuestion === questionSeven.question) {
+      if (questionSeven.check() === true) {
+        appendEighth();
+      }
+    }
+    if (currentQuestion === questionEight.question) {
+      if (questionEight.check() === true) {
+        appendNinth();
+      }
+    }
+    if (currentQuestion === questionNine.question) {
+      if (questionNine.check() === true) {
+        appendTenth();
+      }
+    }
+    if (currentQuestion === questionTen.question) {
+      if (questionTen.check() === true) {
+
+        $('#replay').show();
+
+      }
+    }
 
     // ---------------------------------- //
     // SOUND FOR CHARACTER WINNING //
@@ -160,6 +187,7 @@ $(document).ready(function() {
         audioElement.Play();
       }, true);
       // alert("Congratulations you won!");
+
     }
     else if (($('#playerFinish').html() === luigi) || ($('#computerFinish').html() === luigi)) {
       // play sound
@@ -175,6 +203,28 @@ $(document).ready(function() {
       // alert("Congratulations you won!");
 
     }
+
+  });
+
+  // ------------- //
+  // REPLAY BUTTON //
+  // ------------- //
+  $('#replay').click(function() {
+    // console.log('replay');
+
+    var audioElement = document.createElement('audio');
+    audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/sm64/sm64_mario_thank_you.wav');
+    audioElement.setAttribute('autoplay', 'autoplay');
+
+    $.get();
+
+    audioElement.addEventListener('load', function() {
+      audioElement.Play();
+    }, true);
+
+    $('#raceElements').hide();
+    $('#startScreen').show();
+    $('#characters').show();
 
   });
 

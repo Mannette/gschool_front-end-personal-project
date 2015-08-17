@@ -10,83 +10,116 @@
 
   </head>
   <body>
-    <!-- Area with computer positions -->
-    <section id="computerPosition" class="allPositions">
+    <!-- container for start screen -->
+    <container id="startScreen">
 
-      <span id="computerStart" class="computer position computerStart">Start!</span>
+      <video loop class="flag" autoplay="autoplay">
+        <source src="images/Waving-Checkered-Flag.webm" type="video/webm">
+        <source src="images/Waving-Checkered-Flag.mp4" type="video/mp4">
+      </video>
 
-      <span id="computerPositionOne" class="computer position"></span>
+      <div class="titleRules">
+        <p class="rules">Rules/Instructions</p>
+        <p class="rules">The aim of the game is to beat the computer in a race by answering questions. First, you have to pick a player. Each player will go to their respective starting points and the first question will appear in the bottom right corner. You must answer questions correctly in order to advance. You do not move if the question is answered incorrectly. Click the button when you are ready.</p>
+        <br>
+      </div>
+      <input type="submit" class="ready btn-primary active btn-lg" value="READY?!">
 
-      <span id="computerPositionTwo" class="computer position"></span>
+    </container>
 
-      <span id="computerPositionThree" class="computer position"></span>
+    <!-- container for race -->
+    <container id="raceElements">
+      <!-- Area with computer positions -->
+      <section id="computerPosition" class="allPositions">
 
-      <span id="computerPositionFour" class="computer position"></span>
+        <span id="computerStart" class="computer position computerStart">Start!</span>
 
-      <span id="computerPositionFive" class="computer position"></span>
+        <span id="computerPositionOne" class="computer position"></span>
 
-      <span id="computerPositionSix" class="computer position"></span>
+        <span id="computerPositionTwo" class="computer position"></span>
 
-      <span id="computerPositionSeven" class="computer position"></span>
+        <span id="computerPositionThree" class="computer position"></span>
 
-      <span id="computerPositionEight" class="computer position"></span>
+        <span id="computerPositionFour" class="computer position"></span>
 
-      <span id="computerPositionNine" class="computer position"></span>
+        <span id="computerPositionFive" class="computer position"></span>
 
-      <span id="computerFinish" class="computer position computerFinish">Finish!</span>
+        <span id="computerPositionSix" class="computer position"></span>
 
-    </section>
-    <!-- Area with player positions -->
-    <section id="playerPosition" class="allPositions">
+        <span id="computerPositionSeven" class="computer position"></span>
 
-      <span id="playerStart" class="player position playerStart">Start!</span>
+        <span id="computerPositionEight" class="computer position"></span>
 
-      <span id="playerPositionOne" class="player position"></span>
+        <span id="computerPositionNine" class="computer position"></span>
 
-      <span id="playerPositionTwo" class="player position"></span>
+        <span id="computerFinish" class="computer position computerFinish">Finish!</span>
 
-      <span id="playerPositionThree" class="player position"></span>
+      </section>
+      <!-- Area with player positions -->
+      <section id="playerPosition" class="allPositions">
 
-      <span id="playerPositionFour" class="player position"></span>
+        <span id="playerStart" class="player position playerStart">Start!</span>
 
-      <span id="playerPositionFive" class="player position"></span>
+        <span id="playerPositionOne" class="player position"></span>
 
-      <span id="playerPositionSix" class="player position"></span>
+        <span id="playerPositionTwo" class="player position"></span>
 
-      <span id="playerPositionSeven" class="player position"></span>
+        <span id="playerPositionThree" class="player position"></span>
 
-      <span id="playerPositionEight" class="player position"></span>
+        <span id="playerPositionFour" class="player position"></span>
 
-      <span id="playerPositionNine" class="player position"></span>
+        <span id="playerPositionFive" class="player position"></span>
 
-      <span id="playerFinish" class="player position playerFinish">Finish!</span>
+        <span id="playerPositionSix" class="player position"></span>
 
-    </section>
+        <span id="playerPositionSeven" class="player position"></span>
 
-    <!-- Area for questions/answers -->
-    <section class="question-box">
-      <!-- Radio buttons for answers -->
-      <input type="radio" name="answers" value="1">
-      <span class="questions">banana</span>
-      <br><br>
-      <input type="radio" name="answers" value="2">
-      <span class="questions">banana</span>
-      <br><br>
-      <input type="radio" name="answers" value="3">
-      <span class="questions">banana</span>
-      <br><br>
-      <input type="radio" name="answers" value="4">
-      <span class="questions">banana</span>
-      <br><br>
+        <span id="playerPositionEight" class="player position"></span>
 
-      <!-- Button for advancing -->
-      <input id="advance" class="btn-success advanceButton" type="button" value="Check your answer!">
-    </section>
+        <span id="playerPositionNine" class="player position"></span>
 
-    <!-- Buttons to select character -->
-    <input id="mario" class="select-character" type="image" name="submit" value="submit" src="images/Mario.jpg">
+        <span id="playerFinish" class="player position playerFinish">Finish!</span>
 
-    <input id="luigi" class="select-character" type="image" name="submit" value="submit" src="images/Luigi.jpg">
+      </section>
+
+      <!-- Area for questions/answers -->
+      <section class="question-box">
+        <!-- Replay button -->
+        <input id="replay" type="submit" class="btn-primary replay" value="Replay?">
+
+        <!-- Area for questions -->
+        <div id="questions" class="questions">The question will go here!</div>
+        <br><br>
+
+        <!-- Radio buttons for answers -->
+        <input type="radio" name="answers"  value="1">
+        <span class="question-option">These</span>
+        <br><br>
+        <input type="radio" name="answers"  value="2">
+        <span class="question-option">are the</span>
+        <br><br>
+        <input type="radio" name="answers" value="3">
+        <span class="question-option">possible</span>
+        <br><br>
+        <input type="radio" name="answers" value="4">
+        <span class="question-option">answers!</span>
+        <br><br>
+
+        <!-- Button for advancing -->
+        <input id="advance" class="btn-success advanceButton" type="button" value="Check your answer!">
+      </section>
+      <audio id="marioWin" src="http://themushroomkingdom.net/sounds/wav/mk64/mk64_mario07.wav" preload="auto"></audio>
+      <audio id="luigiWin" src="http://themushroomkingdom.net/sounds/wav/mk64/mk64_luigi07.wav" preload="auto"></audio>
+
+
+      <div id="characters" class="characters">
+        <p>Select Your Character!</p>
+        <!-- Buttons to select character -->
+        <input id="mario" class="select-character" type="image" name="submit" value="submit" src="images/Mario.jpg">
+
+        <input id="luigi" class="select-character" type="image" name="submit" value="submit" src="images/Luigi.jpg">
+      </div>
+    </container>
 
 
 
