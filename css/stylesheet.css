@@ -49,6 +49,7 @@ section {
   height: 400px;
   opacity: 0.8;
   box-shadow: 50px 50px 113px;
+  color: yellow;
 }
 /* Make images same size as div when html is set */
 .image {
@@ -63,4 +64,13 @@ section {
 
 .playerFinish, .computerFinish {
   background-color: yellow;
+}
+
+.advanceButton {
+  position: absolute;
+  top: 88%;
+  /*left: 85%;*/
+  height: 50px;
+  width: 100%;
+  opacity: 1;
 }

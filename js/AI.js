@@ -17,25 +17,28 @@ var cpuThree = new ComputerPlayer('cpu3');
 //   }
 // }
 
+// ------------------------------- //
+// ** COMPUTER ADVANCE FUNCTION ** //
+// ------------------------------- //
 ComputerPlayer.prototype.computerAdvance = function () {
-  var advance = Math.round(Math.random() * 3);
+  var advance = Math.round(Math.random() * 5);
   if (advance !== 2) {
 
     // advance one block;
     computer = $('.computerCurrent').html();
 
-    console.log(computer);
+    // console.log(computer);
 
     // select index with character
     var computerCurrent = $('.computerCurrent').index('.computer');
 
-    console.log(computerCurrent);
+    // console.log(computerCurrent);
 // debugger;
 
     // select next position
     var nextPosition = computerCurrent + 1;
 
-    console.log(nextPosition);
+    // console.log(nextPosition);
 // debugger;
 
     // remove character from current position
@@ -44,9 +47,9 @@ ComputerPlayer.prototype.computerAdvance = function () {
     $('#computerPosition').children().removeClass('computerCurrent');
 
     // move character to next position
-    var test = $('#computerPosition').children()[nextPosition];
-    $(test).addClass('computerCurrent');
-    test.innerHTML = computer;
+    var move = $('#computerPosition').children()[nextPosition];
+    $(move).addClass('computerCurrent');
+    move.innerHTML = computer;
   }
-  console.log(advance);
+  // console.log(advance);
 };

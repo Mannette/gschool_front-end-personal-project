@@ -142,7 +142,7 @@ var questionArr =
 ];
 
 // function to check answer
-function check(questions) {
+Questions.prototype.check = function (questionArr) {
   if (userInput === questions[this.rightAnswer]) {
     // remove question from array.
     alert("Nice work!");
@@ -153,18 +153,18 @@ function check(questions) {
     // Wrong answer, try again!
     alert("Sorry, try again!");
   }
-}
+};
 
 // on advance, determine if next question will be a 'special' question.
-function specialQuestion(questionArr) {
-  var specialOdds = Math.ceil(Math.random() * 4);
-  if (specialOdds === 2) {
-    // change question at first index to special question.
-    // give player item on correct answer.
-  }
-  else {
-    // normal question.
-  }
-}
+// function specialQuestion(questionArr) {
+//   var specialOdds = Math.ceil(Math.random() * 4);
+//   if (specialOdds === 2) {
+//     // change question at index to special question.
+//     // give player item on correct answer.
+//   }
+//   else {
+//     // normal question.
+//   }
+// }
 
 module.exports = Questions;

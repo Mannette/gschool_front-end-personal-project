@@ -101,16 +101,11 @@ $(document).ready(function() {
 
   });
 
-  // ----------------------- //
-  // ** TRACK ADVANCEMENT ** //
-  // ----------------------- //
-  // test advance button.
-  $('#advance').click(function() {
-
-    // computer advancing
-    cpuOne.computerAdvance();
-
-    // console.log('advance!');
+  // -------------------- //
+  // PLAYER MOVE FUNCTION //
+  // -------------------- //
+  // console.log('advance!');
+  function playerMove() {
 
     player = $('.playerCurrent').html();
 
@@ -120,13 +115,13 @@ $(document).ready(function() {
     var playerCurrent = $('.playerCurrent').index('.player');
 
     // console.log(playerCurrent);
-// debugger;
+  // debugger;
 
     // select next position
     var nextPosition = playerCurrent + 1;
 
     // console.log(nextPosition);
-// debugger;
+  // debugger;
 
     // remove character from current position
     // playerCurrent.removeClass('playerCurrent');
@@ -134,12 +129,52 @@ $(document).ready(function() {
     $('#playerPosition').children().removeClass('playerCurrent');
 
     // move character to next position
-    var test = $('#playerPosition').children()[nextPosition];
-    $(test).addClass('playerCurrent');
-    test.innerHTML = player;
+    var move = $('#playerPosition').children()[nextPosition];
+    $(move).addClass('playerCurrent');
+    move.innerHTML = player;
+  }
 
-    // console.log(test);
-// debugger;
+  // ----------------------- //
+  // ** TRACK ADVANCEMENT ** //
+  // ----------------------- //
+  // test advance button.
+  $('#advance').click(function() {
+
+    // computer advancing
+    cpuOne.computerAdvance();
+    // player advancing
+    playerMove();
+
+    // ---------------------------------- //
+    // SOUND FOR CHARACTER WINNING //
+    // ---------------------------------- //
+    if (($('#playerFinish').html() === mario) || ($('#computerFinish').html() === mario)) {
+      // play sound
+      var audioElement = document.createElement('audio');
+      audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_mario07.wav');
+      audioElement.setAttribute('autoplay', 'autoplay');
+
+      $.get();
+
+      audioElement.addEventListener('load', function() {
+        audioElement.Play();
+      }, true);
+      // alert("Congratulations you won!");
+    }
+    else if (($('#playerFinish').html() === luigi) || ($('#computerFinish').html() === luigi)) {
+      // play sound
+      var audioElement = document.createElement('audio');
+      audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_luigi07.wav');
+      audioElement.setAttribute('autoplay', 'autoplay');
+
+      $.get();
+
+      audioElement.addEventListener('load', function() {
+        audioElement.Play();
+      }, true);
+      // alert("Congratulations you won!");
+
+    }
 
   });
 
