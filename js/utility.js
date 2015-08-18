@@ -149,19 +149,11 @@ function playerMove() {
 
   player = $('.playerCurrent').html();
 
-  // console.log(player);
-
   // select index with character
   var playerCurrent = $('.playerCurrent').index('.player');
 
-  // console.log(playerCurrent);
-// debugger;
-
   // select next position
   var nextPosition = playerCurrent + 1;
-
-  // console.log(nextPosition);
-// debugger;
 
   // remove character from current position
   // playerCurrent.removeClass('playerCurrent');

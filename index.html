@@ -14,7 +14,6 @@
     <container id="startScreen">
 
       <video loop class="flag" autoplay="autoplay">
-        <source src="images/Waving-Checkered-Flag.webm" type="video/webm">
         <source src="images/Waving-Checkered-Flag.mp4" type="video/mp4">
       </video>
 
@@ -32,7 +31,7 @@
       <!-- Area with computer positions -->
       <section id="computerPosition" class="allPositions">
 
-        <span id="computerStart" class="computer position computerStart">Start!</span>
+        <span id="computerStart" class="computer position computerStart"></span>
 
         <span id="computerPositionOne" class="computer position"></span>
 
@@ -52,13 +51,13 @@
 
         <span id="computerPositionNine" class="computer position"></span>
 
-        <span id="computerFinish" class="computer position computerFinish">Finish!</span>
+        <span id="computerFinish" class="computer position computerFinish"></span>
 
       </section>
       <!-- Area with player positions -->
       <section id="playerPosition" class="allPositions">
 
-        <span id="playerStart" class="player position playerStart">Start!</span>
+        <span id="playerStart" class="player position playerStart"></span>
 
         <span id="playerPositionOne" class="player position"></span>
 
@@ -78,7 +77,7 @@
 
         <span id="playerPositionNine" class="player position"></span>
 
-        <span id="playerFinish" class="player position playerFinish">Finish!</span>
+        <span id="playerFinish" class="player position playerFinish"></span>
 
       </section>
 
@@ -88,32 +87,34 @@
         <input id="replay" type="submit" class="btn-primary replay" value="Replay?">
 
         <!-- Area for questions -->
-        <div id="questions" class="questions">The question will go here!</div>
-        <br><br>
+        <div id="clear">
+          <div id="questions" class="questions"></div>
+          <br><br>
 
-        <!-- Radio buttons for answers -->
-        <input type="radio" name="answers"  value="1">
-        <span class="question-option">These</span>
-        <br><br>
-        <input type="radio" name="answers"  value="2">
-        <span class="question-option">are the</span>
-        <br><br>
-        <input type="radio" name="answers" value="3">
-        <span class="question-option">possible</span>
-        <br><br>
-        <input type="radio" name="answers" value="4">
-        <span class="question-option">answers!</span>
-        <br><br>
+          <!-- Radio buttons for answers -->
+          <input type="radio" name="answers"  value="1">
+          <span class="firstOption question-option"></span>
+          <br><br>
+          <input type="radio" name="answers"  value="2">
+          <span class="secondOption question-option"></span>
+          <br><br>
+          <input type="radio" name="answers" value="3">
+          <span class="thirdOption question-option"></span>
+          <br><br>
+          <input type="radio" name="answers" value="4">
+          <span class="fourthOption question-option"></span>
+          <br><br>
 
-        <!-- Button for advancing -->
-        <input id="advance" class="btn-success advanceButton" type="button" value="Check your answer!">
+          <!-- Button for advancing -->
+          <input id="advance" class="btn-success advanceButton" type="button" value="Check your answer!">
+        </div>
       </section>
       <audio id="marioWin" src="http://themushroomkingdom.net/sounds/wav/mk64/mk64_mario07.wav" preload="auto"></audio>
       <audio id="luigiWin" src="http://themushroomkingdom.net/sounds/wav/mk64/mk64_luigi07.wav" preload="auto"></audio>
 
 
       <div id="characters" class="characters">
-        <p>Select Your Character!</p>
+        <p>Select Your Player!</p>
         <!-- Buttons to select character -->
         <input id="mario" class="select-character" type="image" name="submit" value="submit" src="images/Mario.jpg">
 
