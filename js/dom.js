@@ -1,13 +1,11 @@
-$(document).ready(function() {
-  // console.log('sanity check');
+$(document).ready(function () {
   // hides anything that isnt meant for startup screen
-  $('#raceElements').hide();
+  setDefault();
 
   // ------------ //
   // READY BUTTON //
   // ------------ //
-  $('.ready').click(function() {
-    // console.log('this is a test.');
+  $('.ready').click(function () {
     $('#raceElements').show();
     $('#startScreen').hide();
     $('#replay').hide();
@@ -18,10 +16,9 @@ $(document).ready(function() {
 
     $.get();
 
-    audioElement.addEventListener('load', function() {
+    audioElement.addEventListener('load', function () {
       audioElement.Play();
     }, true);
-
 
     // ---------------- //
     // SETTING DEFAULTS //
@@ -35,13 +32,12 @@ $(document).ready(function() {
     $('.fourthOption').html('answers!');
 
     // track area
-    $('.position').html("");
+    $('.position').html('');
     $('#playerStart').html('Start!');
     $('#computerStart').html('Start!');
     $('#playerFinish').html('Finish!');
     $('#computerFinish').html('Finish!');
   });
-
 
   var mario = '<img class="image" src="images/Mario.jpg">';
   var luigi = '<img class="image" src="images/Luigi.jpg">';
@@ -50,8 +46,7 @@ $(document).ready(function() {
 // **SELECT CHARACTERS** //
 // --------------------- //
   // select mario
-  $('#mario').click(function() {
-    console.log('you selected mario!');
+  $('#mario').click(function () {
     var player = mario;
     var computer = luigi;
 
@@ -69,10 +64,8 @@ $(document).ready(function() {
       'background': 'green'
     });
 
-
     // hide character images
     $('#characters').hide();
-    // $('#luigi').hide();
 
     // play sound
     var audioElement = document.createElement('audio');
@@ -81,20 +74,18 @@ $(document).ready(function() {
 
     $.get();
 
-    audioElement.addEventListener('load', function() {
+    audioElement.addEventListener('load', function () {
       audioElement.Play();
     }, true);
 
     // Begin quiz.
     // Append first question to question box.
     appendFirst();
-    // return player, computer;
 
   });
 
   // select luigi
-  $('#luigi').click(function() {
-    console.log('you selected luigi!');
+  $('#luigi').click(function () {
     var player = luigi;
     var computer = mario;
 
@@ -116,7 +107,6 @@ $(document).ready(function() {
 
     // hide character images
     $('#characters').hide();
-    // $('#luigi').hide();
 
     // play sound
     var audioElement = document.createElement('audio');
@@ -125,14 +115,13 @@ $(document).ready(function() {
 
     $.get();
 
-    audioElement.addEventListener('load', function() {
+    audioElement.addEventListener('load', function () {
       audioElement.Play();
     }, true);
 
     // Begin quiz.
     // Append first question to question box.
     appendFirst();
-    // return player, computer;
 
   });
 
@@ -140,73 +129,104 @@ $(document).ready(function() {
   // ** TRACK ADVANCEMENT ** //
   // ----------------------- //
   // advance button.
-  $('#advance').click(function() {
+  $('#advance').click(function () {
 
     var currentQuestion = $('#questions').html();
     // computer advancing
     cpuOne.computerAdvance();
 
     // player advancing
-    // playerMove();
+    // multiple conditions to determine question and answer
     if (currentQuestion === questionOne.question) {
+      // if right answer
       if (questionOne.check() === true) {
+        // append next question
         appendSecond();
+        // clear checked buttons
         $('input[name = answers]').attr('checked', false);
       }
     }
     if (currentQuestion === questionTwo.question) {
+      // if right answer
       if (questionTwo.check() === true) {
+        // append next question
         appendThird();
+        // clear checked buttons
         $('input[name = answers]').attr('checked', false);
       }
     }
     if (currentQuestion === questionThree.question) {
+      // if right answer
       if (questionThree.check() === true) {
+        // append next question
         appendFourth();
+        // clear checked buttons
         $('input[name = answers]').attr('checked', false);
       }
     }
     if (currentQuestion === questionFour.question) {
+      // if right answer
       if (questionFour.check() === true) {
+        // append next question
         appendFifth();
+        // clear checked buttons
         $('input[name = answers]').attr('checked', false);
       }
     }
     if (currentQuestion === questionFive.question) {
+      // if right answer
       if (questionFive.check() === true) {
+        // append next question
         appendSixth();
+        // clear checked buttons
         $('input[name = answers]').attr('checked', false);
       }
     }
     if (currentQuestion === questionSix.question) {
+      // if right answer
       if (questionSix.check() === true) {
+        // append next question
         appendSeventh();
+        // clear checked buttons
         $('input[name = answers]').attr('checked', false);
       }
     }
     if (currentQuestion === questionSeven.question) {
+      // if right answer
       if (questionSeven.check() === true) {
+        // append next question
         appendEighth();
+        // clear checked buttons
         $('input[name = answers]').attr('checked', false);
       }
     }
     if (currentQuestion === questionEight.question) {
+      // if right answer
       if (questionEight.check() === true) {
+        // append next question
         appendNinth();
+        // clear checked buttons
         $('input[name = answers]').attr('checked', false);
       }
     }
     if (currentQuestion === questionNine.question) {
+      // if right answer
       if (questionNine.check() === true) {
+        // append next question
         appendTenth();
+        // clear checked buttons
         $('input[name = answers]').attr('checked', false);
       }
     }
     if (currentQuestion === questionTen.question) {
+      // if right answer
       if (questionTen.check() === true) {
+        // clear checked buttons
         $('input[name = answers]').attr('checked', false);
 
+        // hide questions and answers
         $('#clear').hide();
+        // show replay button
         $('#replay').show();
 
       }
@@ -223,13 +243,11 @@ $(document).ready(function() {
 
       $.get();
 
-      audioElement.addEventListener('load', function() {
+      audioElement.addEventListener('load', function () {
         audioElement.Play();
       }, true);
-      // alert("Congratulations you won!");
 
-    }
-    else if (($('#playerFinish').html() === luigi) || ($('#computerFinish').html() === luigi)) {
+    } else if (($('#playerFinish').html() === luigi) || ($('#computerFinish').html() === luigi)) {
       // play sound
       var audioElement = document.createElement('audio');
       audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_luigi07.wav');
@@ -237,10 +255,9 @@ $(document).ready(function() {
 
       $.get();
 
-      audioElement.addEventListener('load', function() {
+      audioElement.addEventListener('load', function () {
         audioElement.Play();
       }, true);
-      // alert("Congratulations you won!");
 
     }
 
@@ -249,8 +266,7 @@ $(document).ready(function() {
   // ------------- //
   // REPLAY BUTTON //
   // ------------- //
-  $('#replay').click(function() {
-    console.log('replay');
+  $('#replay').click(function () {
 
     var audioElement = document.createElement('audio');
     audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/sm64/sm64_mario_thank_you.wav');
@@ -258,15 +274,12 @@ $(document).ready(function() {
 
     $.get();
 
-    audioElement.addEventListener('load', function() {
+    audioElement.addEventListener('load', function () {
       audioElement.Play();
     }, true);
 
-    $('#raceElements').hide();
-    $('#startScreen').show();
-    $('#characters').show();
-    $('#clear').show();
-
+    // set defaults
+    setDefault();
   });
 
 });

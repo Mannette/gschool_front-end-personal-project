@@ -11,6 +11,8 @@
  /*Setting background image*/
 body {
 background-image: url("../images/Super-Mario-Kart.jpg");
+background-size: cover;
+background-repeat: no-repeat;
 }
 
 /* Additional styling for area around positions */
@@ -55,15 +57,18 @@ section {
   width: inherit;
 }
 
+/* Make starting position different color */
 .playerStart, .computerStart {
   background-color: blue;
   color: white;
 }
 
+/* Make fish position different color */
 .playerFinish, .computerFinish {
   background-color: yellow;
 }
 
+/* Styling for advance button */
 .advanceButton {
   position: absolute;
   top: 88%;
@@ -72,12 +77,14 @@ section {
   opacity: 1;
 }
 
+/* Styling for replay button */
 .replay {
   height: 100%;
   width: 100%;
   font-size: 4em;
 }
 
+/* Styling for rules/instructions block */
 .titleRules {
   background-color: red;
   margin: auto;
@@ -87,6 +94,7 @@ section {
   text-align: center;
 }
 
+/* Styling for ready button on rules/instructions page */
 .ready {
   position: absolute;
   top: 50%;
@@ -94,12 +102,14 @@ section {
   width: 50%
 }
 
+/* Styling for character block */
 .select-character {
   box-shadow: 50px 50px 113px rgb(0, 0, 0);
   background-size: contain;
   background-repeat: no-repeat;
 }
 
+/* Styling for flag movie on initial page */
 .flag {
   position: absolute;
   z-index: -1;

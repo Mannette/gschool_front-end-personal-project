@@ -1,153 +1,152 @@
 // create question class
-function Questions(question, answers, rightAnswer) {
+function Questions (question, answers, rightAnswer) {
   this.question = question;
   this.answers = answers;
   this.rightAnswer = rightAnswer;
 }
 
 // Create first question
-questionOne = new Questions(
-  "Which is a primitive in JavaScript?",
+var questionOne = new Questions(
+  'Which is a primitive in JavaScript?',
   {
-    1: "Script",
-    2: "String",
-    3: "this",
-    4: "Java"
+    1: 'Script',
+    2: 'String',
+    3: 'this',
+    4: 'Java'
   },
   2
 );
 
 // Create second question
-questionTwo = new Questions(
-  "What does NaN mean?",
+var questionTwo = new Questions(
+  'What does NaN mean?',
   {
-    1: "BaNaNa",
-    2: "New at number",
-    3: "Nothing to see here",
-    4: "Not a number"
+    1: 'BaNaNa',
+    2: 'New at number',
+    3: 'Nothing to see here',
+    4: 'Not a number'
   },
   4
 );
 
 // Create third question
-questionThree = new Questions(
-  "Which company developed JavaScript?",
+var questionThree = new Questions(
+  'Which company developed JavaScript?',
   {
-    1: "Netscape",
-    2: "Java",
-    3: "Apple geniuses",
-    4: "twitter"
+    1: 'Netscape',
+    2: 'Java',
+    3: 'Apple geniuses',
+    4: 'twitter'
   },
   1
 );
 
 // Create fourth question
-questionFour = new Questions(
-  "Which of these is used for comments in JavaScript?",
+var questionFour = new Questions(
+  'Which of these is used for comments in JavaScript?',
   {
-    1: "/-- --/",
-    2: "*/ /*",
-    3: "/ /",
-    4: "` ` `"
+    1: '/-- --/',
+    2: '*/ /*',
+    3: '/ /',
+    4: '` ` `'
   },
   3
 );
 
 // Create fifth question
-questionFive = new Questions(
-  "Which symbol means 'OR'?",
+var questionFive = new Questions(
+  'Which symbol means "OR"?',
   {
-    1: "? ?",
-    2: "| |",
-    3: "/ ! /",
-    4: "& |"
+    1: '? ?',
+    2: '| |',
+    3: '/ ! /',
+    4: '& |'
   },
   2
 );
 
 // Create sixth question
-questionSix = new Questions(
-  "Which one is a looping structure?",
+var questionSix = new Questions(
+  'Which one is a looping structure?',
   {
-    1: "do-while",
-    2: "if",
-    3: "during",
-    4: "fizz-buzz"
+    1: 'do-while',
+    2: 'if',
+    3: 'during',
+    4: 'fizz-buzz'
   },
   1
 );
 
 // Create seventh question
-questionSeven = new Questions(
-  "What does '4' + '8' equal?",
+var questionSeven = new Questions(
+  'What does "4" + "8" equal?',
   {
-    1: "24",
-    2: "12",
-    3: "16",
-    4: "48"
+    1: '24',
+    2: '12',
+    3: '16',
+    4: '48'
   },
   4
 );
 
 // Create eigth question
-questionEight = new Questions(
-  "What value does NULL represent?",
+var questionEight = new Questions(
+  'What value does NULL represent?',
   {
-    1: "0",
-    2: "None",
-    3: "< 0",
-    4: "> 0"
+    1: '0',
+    2: 'None',
+    3: '< 0',
+    4: '> 0'
   },
   2
 );
 
 // Create ninth question
-questionNine = new Questions(
-  "Which of these is a Boolean operator?",
+var questionNine = new Questions(
+  'Which of these is a Boolean operator?',
   {
-    1: "<",
-    2: ">",
-    3: "!",
-    4: "=="
+    1: '<',
+    2: '>',
+    3: '!',
+    4: '=='
   },
   3
 );
 
 // Create tenth question
-questionTen = new Questions(
+var questionTen = new Questions(
   // change this question.
-  "What is my middle name?",
+  'What is my middle name?',
   {
-    1: "Julian",
-    2: "Mark",
-    3: "Antonio",
-    4: "Roy"
+    1: 'Julian',
+    2: 'Mark',
+    3: 'Antonio',
+    4: 'Roy'
   },
   4
 );
 
 // Create array to hold questions.
 var questionArr =
-[
-  questionOne,
-  questionTwo,
-  questionThree,
-  questionFour,
-  questionFive,
-  questionSix,
-  questionSeven,
-  questionEight,
-  questionNine,
-  questionTen
-];
+  [
+    questionOne,
+    questionTwo,
+    questionThree,
+    questionFour,
+    questionFive,
+    questionSix,
+    questionSeven,
+    questionEight,
+    questionNine,
+    questionTen
+  ];
 
 // -------------------- //
 // PLAYER MOVE FUNCTION //
 // -------------------- //
-// console.log('advance!');
-function playerMove() {
+function playerMove () {
 
-  player = $('.playerCurrent').html();
+  var player = $('.playerCurrent').html();
 
   // select index with character
   var playerCurrent = $('.playerCurrent').index('.player');
@@ -156,7 +155,6 @@ function playerMove() {
   var nextPosition = playerCurrent + 1;
 
   // remove character from current position
-  // playerCurrent.removeClass('playerCurrent');
   $('.playerCurrent').html('');
   $('#playerPosition').children().removeClass('playerCurrent');
 
@@ -168,38 +166,34 @@ function playerMove() {
 
 // function to check answer
 Questions.prototype.check = function () {
-  // var correct = false;
   var userInput = parseInt($("input[type='radio'][name='answers']:checked").val());
 
-    if (userInput === this.rightAnswer) {
-      // alert("Nice work!");
-      var audioElement = document.createElement('audio');
-      audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/smb/smb_coin.wav');
-      audioElement.setAttribute('autoplay', 'autoplay');
+  if (userInput === this.rightAnswer) {
+    var audioElement = document.createElement('audio');
+    audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/smb/smb_coin.wav');
+    audioElement.setAttribute('autoplay', 'autoplay');
 
-      $.get();
+    $.get();
 
-      audioElement.addEventListener('load', function() {
-        audioElement.Play();
-      }, true);
-      // Advance to next question.
-      playerMove();
-      return true;
-    }
-    else {
-      // Wrong answer, try again!
-      var audioElement = document.createElement('audio');
-      audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/sm64/sm64_boo.wav');
-      audioElement.setAttribute('autoplay', 'autoplay');
+    audioElement.addEventListener('load', function () {
+      audioElement.Play();
+    }, true);
+    // Advance to next question.
+    playerMove();
+    return true;
 
-      $.get();
+  } else {
+    var audioElement = document.createElement('audio');
+    audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/sm64/sm64_boo.wav');
+    audioElement.setAttribute('autoplay', 'autoplay');
 
-      audioElement.addEventListener('load', function() {
-        audioElement.Play();
-      }, true);
+    $.get();
 
-      // alert("Sorry, try again!");
-    }
+    audioElement.addEventListener('load', function () {
+      audioElement.Play();
+    }, true);
+
+  }
 };
 
 // ------------------------------------ //
@@ -313,7 +307,7 @@ function appendNinth () {
   $('.question-option')[3].innerHTML = questionArr[8].answers[4];
 }
 
-function appendTenth() {
+function appendTenth () {
   $('#questions').html(questionArr[9].question);
 
   $('.question-option')[0].innerHTML = questionArr[9].answers[1];
@@ -323,6 +317,13 @@ function appendTenth() {
   $('.question-option')[2].innerHTML = questionArr[9].answers[3];
 
   $('.question-option')[3].innerHTML = questionArr[9].answers[4];
+}
+
+function setDefault () {
+  $('#raceElements').hide();
+  $('#startScreen').show();
+  $('#characters').show();
+  $('#clear').show();
 }
 
 // on advance, determine if next question will be a 'special' question.
