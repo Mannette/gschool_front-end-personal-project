@@ -9,26 +9,74 @@ var cpuThree = new ComputerPlayer('cpu3');
 // ------------------------------- //
 // ** COMPUTER ADVANCE FUNCTION ** //
 // ------------------------------- //
-ComputerPlayer.prototype.computerAdvance = function () {
+ComputerPlayer.prototype.computerOneAdvance = function () {
   var advance = Math.round(Math.random() * 5);
   if (advance !== 2) {
 
     // advance one block;
-    computer = $('.computerCurrent').html();
+    computer = $('.computerOneCurrent').html();
 
     // select index with character
-    var computerCurrent = $('.computerCurrent').index('.computer');
+    var computerCurrent = $('.computerOneCurrent').index('.computerOne');
 
     // select next position
     var nextPosition = computerCurrent + 1;
 
     // remove character from current position
-    $('.computerCurrent').html('');
-    $('#computerPosition').children().removeClass('computerCurrent');
+    $('.computerOneCurrent').html('');
+    $('#computerOnePosition').children().removeClass('computerOneCurrent');
 
     // move character to next position
-    var move = $('#computerPosition').children()[nextPosition];
-    $(move).addClass('computerCurrent');
+    var move = $('#computerOnePosition').children()[nextPosition];
+    $(move).addClass('computerOneCurrent');
+    move.innerHTML = computer;
+  }
+};
+
+ComputerPlayer.prototype.computerTwoAdvance = function () {
+  var advance = Math.round(Math.random() * 5);
+  if (advance !== 2) {
+
+    // advance one block;
+    computer = $('.computerTwoCurrent').html();
+
+    // select index with character
+    var computerCurrent = $('.computerTwoCurrent').index('.computerTwo');
+
+    // select next position
+    var nextPosition = computerCurrent + 1;
+
+    // remove character from current position
+    $('.computerTwoCurrent').html('');
+    $('#computerTwoPosition').children().removeClass('computerTwoCurrent');
+
+    // move character to next position
+    var move = $('#computerTwoPosition').children()[nextPosition];
+    $(move).addClass('computerTwoCurrent');
+    move.innerHTML = computer;
+  }
+};
+
+ComputerPlayer.prototype.computerThreeAdvance = function () {
+  var advance = Math.round(Math.random() * 5);
+  if (advance !== 2) {
+
+    // advance one block;
+    computer = $('.computerThreeCurrent').html();
+
+    // select index with character
+    var computerCurrent = $('.computerThreeCurrent').index('.computerThree');
+
+    // select next position
+    var nextPosition = computerCurrent + 1;
+
+    // remove character from current position
+    $('.computerThreeCurrent').html('');
+    $('#computerThreePosition').children().removeClass('computerThreeCurrent');
+
+    // move character to next position
+    var move = $('#computerThreePosition').children()[nextPosition];
+    $(move).addClass('computerThreeCurrent');
     move.innerHTML = computer;
   }
 };

@@ -58,9 +58,9 @@ $(document).ready(function () {
     });
 
     // place luigi into computerStart
-    $('#computerStart').html(computer).addClass('computerCurrent');
+    $('#computerOneStart').html(computer).addClass('computerOneCurrent');
 
-    $('#computerPosition').css({
+    $('#computerOnePosition').css({
       'background': 'green'
     });
 
@@ -99,9 +99,9 @@ $(document).ready(function () {
     });
 
     // place mario into computerStart
-    $('#computerStart').html(computer).addClass('computerCurrent');
+    $('#computerOneStart').html(computer).addClass('computerOneCurrent');
 
-    $('#computerPosition').css({
+    $('#computerOnePosition').css({
       'background': 'red'
     });
 
@@ -133,7 +133,7 @@ $(document).ready(function () {
 
     var currentQuestion = $('#questions').html();
     // computer advancing
-    cpuOne.computerAdvance();
+    cpuOne.computerOneAdvance();
 
     // player advancing
     // multiple conditions to determine question and answer
@@ -280,6 +280,7 @@ $(document).ready(function () {
 
     // set defaults
     setDefault();
+    $('audio').remove();
   });
 
 });
