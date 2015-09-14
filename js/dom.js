@@ -15,7 +15,7 @@ $(document).ready(function () {
     audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_mario_a09.wav');
     audioElement.setAttribute('autoplay', 'autoplay');
 
-    $.get();
+    // $.get();
 
     audioElement.addEventListener('load', function () {
       audioElement.Play();
@@ -85,7 +85,7 @@ $(document).ready(function () {
     audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_mario02.wav');
     audioElement.setAttribute('autoplay', 'autoplay');
 
-    $.get();
+    // $.get();
 
     audioElement.addEventListener('load', function () {
       audioElement.Play();
@@ -123,7 +123,7 @@ $(document).ready(function () {
     audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_luigi03.wav');
     audioElement.setAttribute('autoplay', 'autoplay');
 
-    $.get();
+    // $.get();
 
     audioElement.addEventListener('load', function () {
       audioElement.Play();
@@ -161,7 +161,7 @@ $(document).ready(function () {
     audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_toad03.wav');
     audioElement.setAttribute('autoplay', 'autoplay');
 
-    $.get();
+    // $.get();
 
     audioElement.addEventListener('load', function () {
       audioElement.Play();
@@ -199,7 +199,7 @@ $(document).ready(function () {
     audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_peach08.wav');
     audioElement.setAttribute('autoplay', 'autoplay');
 
-    $.get();
+    // $.get();
 
     audioElement.addEventListener('load', function () {
       audioElement.Play();
@@ -332,7 +332,7 @@ $(document).ready(function () {
       audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_mario07.wav');
       audioElement.setAttribute('autoplay', 'autoplay');
 
-      $.get();
+      // $.get();
 
       audioElement.addEventListener('load', function () {
         audioElement.Play();
@@ -344,7 +344,7 @@ $(document).ready(function () {
       audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_luigi07.wav');
       audioElement.setAttribute('autoplay', 'autoplay');
 
-      $.get();
+      // $.get();
 
       audioElement.addEventListener('load', function () {
         audioElement.Play();
@@ -363,7 +363,7 @@ $(document).ready(function () {
     audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/sm64/sm64_mario_thank_you.wav');
     audioElement.setAttribute('autoplay', 'autoplay');
 
-    $.get();
+    // $.get();
 
     audioElement.addEventListener('load', function () {
       audioElement.Play();
