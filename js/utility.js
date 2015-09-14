@@ -4,6 +4,9 @@ function Questions (question, answers, rightAnswer) {
   this.answers = answers;
   this.rightAnswer = rightAnswer;
 }
+// --------------- //
+// BEGIN QUESTIONS //
+// --------------- //
 
 // Create first question
 var questionOne = new Questions(
@@ -141,9 +144,16 @@ var questionArr =
     questionTen
   ];
 
-// -------------------- //
-// PLAYER MOVE FUNCTION //
-// -------------------- //
+// ------------------- //
+// ** END QUESTIONS ** //
+// ------------------- //
+
+// *************************** //
+
+// ------------------ //
+// PLAYER ADVANCEMENT //
+// ------------------ //
+
 function playerMove () {
 
   var player = $('.playerCurrent').html();
@@ -163,6 +173,123 @@ function playerMove () {
   $(move).addClass('playerCurrent');
   move.innerHTML = player;
 }
+
+// ---------------------------- //
+// ** END PLAYER ADVANCEMENT ** //
+// ---------------------------- //
+
+// **************************** //
+
+// ---------------- //
+// MOVE AI TO START //
+// ---------------- //
+
+var mario = '<img class="image" src="images/Mario.jpg">';
+var luigi = '<img class="image" src="images/Luigi.jpg">';
+var peach = '<img class="image" src="images/Peach.jpg">';
+var toad = '<img class="image" src="images/Toad.jpg">';
+
+function marioToStart (player) {
+  // AI position based on character picked
+  if (player === luigi) {
+    $('#computerOneStart').html(mario).addClass('computerOneCurrent');
+
+    $('#computerOnePosition').css({
+      'background': 'red'
+    });
+  } else if (player === toad) {
+    $('#computerOneStart').html(mario).addClass('computerOneCurrent');
+
+    $('#computerOnePosition').css({
+      'background': 'red'
+    });
+  } else if (player === peach) {
+    $('#computerOneStart').html(mario).addClass('computerOneCurrent');
+
+    $('#computerOnePosition').css({
+      'background': 'red'
+    });
+  }
+}
+
+function luigiToStart (player) {
+  // AI position based on character picked
+  if (player === mario) {
+    $('#computerOneStart').html(luigi).addClass('computerOneCurrent');
+
+    $('#computerOnePosition').css({
+      'background': 'green'
+    });
+  } else if (player === toad) {
+    $('#computerTwoStart').html(luigi).addClass('computerTwoCurrent');
+
+    $('#computerTwoPosition').css({
+      'background': 'green'
+    });
+  } else if (player === peach) {
+    $('#computerTwoStart').html(luigi).addClass('computerTwoCurrent');
+
+    $('#computerTwoPosition').css({
+      'background': 'green'
+    });
+  }
+}
+
+function toadToStart (player) {
+  // AI position based on character picked
+  if (player === mario) {
+    $('#computerTwoStart').html(toad).addClass('computerTwoCurrent');
+
+    $('#computerTwoPosition').css({
+      'background': 'blue'
+    });
+  } else if (player === luigi) {
+    $('#computerTwoStart').html(toad).addClass('computerTwoCurrent');
+
+    $('#computerTwoPosition').css({
+      'background': 'blue'
+    });
+  } else if (player === peach) {
+    $('#computerThreeStart').html(toad).addClass('computerThreeCurrent');
+
+    $('#computerThreePosition').css({
+      'background': 'blue'
+    });
+  }
+}
+
+function peachToStart (player) {
+  // AI position based on character picked
+  if (player === mario) {
+    $('#computerThreeStart').html(peach).addClass('computerThreeCurrent');
+
+    $('#computerThreePosition').css({
+      'background': 'pink'
+    });
+  } else if (player === luigi) {
+    $('#computerThreeStart').html(peach).addClass('computerThreeCurrent');
+
+    $('#computerThreePosition').css({
+      'background': 'pink'
+    });
+  } else if (player === toad) {
+    $('#computerThreeStart').html(peach).addClass('computerThreeCurrent');
+
+    $('#computerThreePosition').css({
+      'background': 'pink'
+    });
+  }
+}
+
+// --------------------- //
+// ** END AI TO START ** //
+// --------------------- //
+
+// **************************** //
+
+// ------------ //
+// CHECK ANSWER //
+// ------------ //
 
 // function to check answer
 Questions.prototype.check = function () {
@@ -195,6 +322,12 @@ Questions.prototype.check = function () {
 
   }
 };
+
+// ----------------------- //
+// ** END CHECK ANSWERS ** //
+// ----------------------- //
+
+// ****************************** //
 
 // ------------------------------------ //
 // FUNCTIONS TO APPEND QUESTIONS TO DOM //
@@ -319,12 +452,27 @@ function appendTenth () {
   $('.question-option')[3].innerHTML = questionArr[9].answers[4];
 }
 
+// ------------------- //
+// ** END APPENDING ** //
+// ------------------- //
+
+// ************************** //
+
+// -------- //
+// DEFAULTS //
+// -------- //
+
 function setDefault () {
   $('#raceElements').hide();
+  $('#character_select').hide();
   $('#startScreen').show();
-  $('#characters').show();
   $('#clear').show();
 }
+
+// ------------------ //
+// ** END DEFAULTS ** //
+// ------------------ //
+
 
 // on advance, determine if next question will be a 'special' question.
 // function specialQuestion(questionArr) {

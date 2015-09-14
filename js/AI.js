@@ -17,10 +17,10 @@ ComputerPlayer.prototype.computerOneAdvance = function () {
     computer = $('.computerOneCurrent').html();
 
     // select index with character
-    var computerCurrent = $('.computerOneCurrent').index('.computerOne');
+    var computerOneCurrent = $('.computerOneCurrent').index('.computerOne');
 
     // select next position
-    var nextPosition = computerCurrent + 1;
+    var nextPosition = computerOneCurrent + 1;
 
     // remove character from current position
     $('.computerOneCurrent').html('');
@@ -41,10 +41,10 @@ ComputerPlayer.prototype.computerTwoAdvance = function () {
     computer = $('.computerTwoCurrent').html();
 
     // select index with character
-    var computerCurrent = $('.computerTwoCurrent').index('.computerTwo');
+    var computerTwoCurrent = $('.computerTwoCurrent').index('.computerTwo');
 
     // select next position
-    var nextPosition = computerCurrent + 1;
+    var nextPosition = computerTwoCurrent + 1;
 
     // remove character from current position
     $('.computerTwoCurrent').html('');

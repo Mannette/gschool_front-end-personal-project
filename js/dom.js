@@ -6,9 +6,10 @@ $(document).ready(function () {
   // READY BUTTON //
   // ------------ //
   $('.ready').click(function () {
-    $('#raceElements').show();
+    $('#raceElements').hide();
     $('#startScreen').hide();
     $('#replay').hide();
+    $('#character_select').show();
 
     var audioElement = document.createElement('audio');
     audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_mario_a09.wav');
@@ -39,33 +40,45 @@ $(document).ready(function () {
     $('#computerFinish').html('Finish!');
   });
 
+  // ---------- //
+  // CHARACTERS //
+  // ---------- //
+
   var mario = '<img class="image" src="images/Mario.jpg">';
   var luigi = '<img class="image" src="images/Luigi.jpg">';
+  var toad = '<img class="image" src="images/Toad.jpg">';
+  var peach = '<img class="image" src="images/Peach.jpg">';
 
-// --------------------- //
-// **SELECT CHARACTERS** //
-// --------------------- //
+  // -------------------- //
+  // ** END CHARACTERS ** //
+  // -------------------- //
+
+  // ************************ //
+
+  // ----------------- //
+  // SELECT CHARACTERS //
+  // ----------------- //
   // select mario
   $('#mario').click(function () {
     var player = mario;
-    var computer = luigi;
+    // var computerOne = luigi;
+    // var computerTwo = toad;
+    // var computerThree = peach;
 
-    // place mario into playerStart
+    // place player into playerStart
     $('#playerStart').html(player).addClass('playerCurrent');
 
     $('#playerPosition').css({
       'background': 'red'
     });
 
-    // place luigi into computerStart
-    $('#computerOneStart').html(computer).addClass('computerOneCurrent');
-
-    $('#computerOnePosition').css({
-      'background': 'green'
-    });
+    luigiToStart(player);
+    toadToStart(player);
+    peachToStart(player);
 
     // hide character images
     $('#characters').hide();
+    $('#raceElements').show();
 
     // play sound
     var audioElement = document.createElement('audio');
@@ -87,26 +100,23 @@ $(document).ready(function () {
   // select luigi
   $('#luigi').click(function () {
     var player = luigi;
-    var computer = mario;
+    // var computerOne = mario;
+    // var computerTwo = toad;
+    // var computerThree = peach;
 
-    // place luigi into playerStart
     $('#playerStart').html(player).addClass('playerCurrent');
-
-    // $('#playerPositionOne').html(player).addClass('playerCurrent');
 
     $('#playerPosition').css({
       'background': 'green'
     });
 
-    // place mario into computerStart
-    $('#computerOneStart').html(computer).addClass('computerOneCurrent');
-
-    $('#computerOnePosition').css({
-      'background': 'red'
-    });
+    marioToStart(player);
+    toadToStart(player);
+    peachToStart(player);
 
     // hide character images
     $('#characters').hide();
+    $('#raceElements').show();
 
     // play sound
     var audioElement = document.createElement('audio');
@@ -125,6 +135,85 @@ $(document).ready(function () {
 
   });
 
+  $('#toad').click(function () {
+    var player = toad;
+    // var computerOne = mario;
+    // var computerTwo = luigi;
+    // var computerThree = peach;
+
+    // place toad into playerStart
+    $('#playerStart').html(player).addClass('playerCurrent');
+
+    $('#playerPosition').css({
+      'background': 'blue'
+    });
+
+    marioToStart(player);
+    luigiToStart(player);
+    peachToStart(player);
+
+    // hide character images
+    $('#characters').hide();
+    $('#raceElements').show();
+
+    // play sound
+    var audioElement = document.createElement('audio');
+    audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_toad03.wav');
+    audioElement.setAttribute('autoplay', 'autoplay');
+
+    $.get();
+
+    audioElement.addEventListener('load', function () {
+      audioElement.Play();
+    }, true);
+
+    // Begin quiz.
+    // Append first question to question box.
+    appendFirst();
+
+  });
+
+  $('#peach').click(function () {
+    var player = peach;
+    // var computerOne = mario;
+    // var computerTwo = toad;
+    // var computerThree = luigi;
+
+    // place peach into playerStart
+    $('#playerStart').html(player).addClass('playerCurrent');
+
+    $('#playerPosition').css({
+      'background': 'pink'
+    });
+
+    marioToStart(player);
+    luigiToStart(player);
+    toadToStart(player);
+
+    // hide character images
+    $('#characters').hide();
+    $('#raceElements').show();
+
+    // play sound
+    var audioElement = document.createElement('audio');
+    audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_peach08.wav');
+    audioElement.setAttribute('autoplay', 'autoplay');
+
+    $.get();
+
+    audioElement.addEventListener('load', function () {
+      audioElement.Play();
+    }, true);
+
+    // Begin quiz.
+    // Append first question to question box.
+    appendFirst();
+
+  });
+  // ----------------------------- //
+  // ** END CHARACTER SELECTION ** //
+  // ----------------------------- //
+
   // ----------------------- //
   // ** TRACK ADVANCEMENT ** //
   // ----------------------- //
@@ -134,6 +223,8 @@ $(document).ready(function () {
     var currentQuestion = $('#questions').html();
     // computer advancing
     cpuOne.computerOneAdvance();
+    cpuTwo.computerTwoAdvance();
+    cpuThree.computerThreeAdvance();
 
     // player advancing
     // multiple conditions to determine question and answer
