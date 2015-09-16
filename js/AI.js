@@ -34,7 +34,7 @@ ComputerPlayer.prototype.computerOneAdvance = function () {
 };
 
 ComputerPlayer.prototype.computerTwoAdvance = function () {
-  var advance = Math.round(Math.random() * 5);
+  var advance = Math.round(Math.random() * 4);
   if (advance !== 2) {
 
     // advance one block;
@@ -58,7 +58,7 @@ ComputerPlayer.prototype.computerTwoAdvance = function () {
 };
 
 ComputerPlayer.prototype.computerThreeAdvance = function () {
-  var advance = Math.round(Math.random() * 5);
+  var advance = Math.round(Math.random() * 6);
   if (advance !== 2) {
 
     // advance one block;

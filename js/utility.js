@@ -296,28 +296,28 @@ Questions.prototype.check = function () {
   var userInput = parseInt($("input[type='radio'][name='answers']:checked").val());
 
   if (userInput === this.rightAnswer) {
-    var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/smb/smb_coin.wav');
-    audioElement.setAttribute('autoplay', 'autoplay');
+    var rightAnswerAudio = document.createElement('audio');
+    rightAnswerAudio.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/smb/smb_coin.wav');
+    rightAnswerAudio.setAttribute('autoplay', 'autoplay');
 
-    $.get();
+    // $.get();
 
-    audioElement.addEventListener('load', function () {
-      audioElement.Play();
+    rightAnswerAudio.addEventListener('load', function () {
+      rightAnswerAudio.Play();
     }, true);
     // Advance to next question.
     playerMove();
     return true;
 
   } else {
-    var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/sm64/sm64_boo.wav');
-    audioElement.setAttribute('autoplay', 'autoplay');
+    var wrongAnswerAudio = document.createElement('audio');
+    wrongAnswerAudio.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/sm64/sm64_boo.wav');
+    wrongAnswerAudio.setAttribute('autoplay', 'autoplay');
 
-    $.get();
+    // $.get();
 
-    audioElement.addEventListener('load', function () {
-      audioElement.Play();
+    wrongAnswerAudio.addEventListener('load', function () {
+      wrongAnswerAudio.Play();
     }, true);
 
   }
