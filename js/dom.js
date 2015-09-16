@@ -326,7 +326,7 @@ $(document).ready(function () {
     // ---------------------------------- //
     // SOUND FOR CHARACTER WINNING //
     // ---------------------------------- //
-    if (($('#playerFinish').html() === mario) || ($('#computerFinish').html() === mario)) {
+    if ($('#playerFinish').html() === mario) {
       // play sound
       var audioElement = document.createElement('audio');
       audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_mario07.wav');
@@ -338,10 +338,34 @@ $(document).ready(function () {
         audioElement.Play();
       }, true);
 
-    } else if (($('#playerFinish').html() === luigi) || ($('#computerFinish').html() === luigi)) {
+    } else if ($('#playerFinish').html() === luigi) {
       // play sound
       var audioElement = document.createElement('audio');
       audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_luigi07.wav');
+      audioElement.setAttribute('autoplay', 'autoplay');
+
+      // $.get();
+
+      audioElement.addEventListener('load', function () {
+        audioElement.Play();
+      }, true);
+
+    } else if ($('#playerFinish').html() === toad) {
+      // play sound
+      var audioElement = document.createElement('audio');
+      audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_toad07.wav');
+      audioElement.setAttribute('autoplay', 'autoplay');
+
+      // $.get();
+
+      audioElement.addEventListener('load', function () {
+        audioElement.Play();
+      }, true);
+
+    } else if ($('#playerFinish').html() === peach) {
+      // play sound
+      var audioElement = document.createElement('audio');
+      audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_peach03.wav');
       audioElement.setAttribute('autoplay', 'autoplay');
 
       // $.get();
