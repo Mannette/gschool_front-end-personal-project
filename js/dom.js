@@ -25,19 +25,16 @@ $(document).ready(function () {
     // SETTING DEFAULTS //
     // ---------------- //
 
-    // question area
-    $('#questions').html('The question will go here!');
-    $('.firstOption').html('These');
-    $('.secondOption').html('are the');
-    $('.thirdOption').html('possible');
-    $('.fourthOption').html('answers!');
-
     // track area
     $('.position').html('');
     $('#playerStart').html('Start!');
-    $('#computerStart').html('Start!');
+    $('#computerOneStart').html('Start!');
+    $('#computerTwoStart').html('Start!');
+    $('#computerThreeStart').html('Start!');
     $('#playerFinish').html('Finish!');
-    $('#computerFinish').html('Finish!');
+    $('#computerOneFinish').html('Finish!');
+    $('#computerTwoFinish').html('Finish!');
+    $('#computerThreeFinish').html('Finish!');
   });
 
   // ---------- //
@@ -61,9 +58,6 @@ $(document).ready(function () {
   // select mario
   $('#mario').click(function () {
     var player = mario;
-    // var computerOne = luigi;
-    // var computerTwo = toad;
-    // var computerThree = peach;
 
     // place player into playerStart
     $('#playerStart').html(player).addClass('playerCurrent');
@@ -77,7 +71,7 @@ $(document).ready(function () {
     peachToStart(player);
 
     // hide character images
-    $('#characters').hide();
+    $('#character_select').hide();
     $('#raceElements').show();
 
     // play sound
@@ -115,7 +109,7 @@ $(document).ready(function () {
     peachToStart(player);
 
     // hide character images
-    $('#characters').hide();
+    $('#character_select').hide();
     $('#raceElements').show();
 
     // play sound
@@ -153,7 +147,7 @@ $(document).ready(function () {
     peachToStart(player);
 
     // hide character images
-    $('#characters').hide();
+    $('#character_select').hide();
     $('#raceElements').show();
 
     // play sound
@@ -191,7 +185,7 @@ $(document).ready(function () {
     toadToStart(player);
 
     // hide character images
-    $('#characters').hide();
+    $('#character_select').hide();
     $('#raceElements').show();
 
     // play sound
