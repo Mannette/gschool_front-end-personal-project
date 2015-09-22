@@ -35,12 +35,12 @@ Item.prototype.banana = function() {
 };
 
 // Item.prototype.mushroom = function() {
-//   // speeds up progression
+//   // speeds up progression for 1 turn
 //   // possible to finish without answering all questions
 // };
 //
 // Item.prototype.star = function() {
-//   // speeds up progression
+//   // speeds up progression for 2 turns
 //   // possible to finish without answering all questions
 //   // negates effects of all other items for 2 turns
 // };

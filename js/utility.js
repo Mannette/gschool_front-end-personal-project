@@ -300,8 +300,6 @@ Questions.prototype.check = function () {
     rightAnswerAudio.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/smb/smb_coin.wav');
     rightAnswerAudio.setAttribute('autoplay', 'autoplay');
 
-    // $.get();
-
     rightAnswerAudio.addEventListener('load', function () {
       rightAnswerAudio.Play();
     }, true);
@@ -313,8 +311,6 @@ Questions.prototype.check = function () {
     var wrongAnswerAudio = document.createElement('audio');
     wrongAnswerAudio.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/sm64/sm64_boo.wav');
     wrongAnswerAudio.setAttribute('autoplay', 'autoplay');
-
-    // $.get();
 
     wrongAnswerAudio.addEventListener('load', function () {
       wrongAnswerAudio.Play();
@@ -475,15 +471,15 @@ function setDefault () {
 
 
 // on advance, determine if next question will be a 'special' question.
-// function specialQuestion(questionArr) {
-//   var specialOdds = Math.ceil(Math.random() * 4);
-//   if (specialOdds === 2) {
-//     // change question at index to special question.
-//     // give player item on correct answer.
-//   }
-//   else {
-//     // normal question.
-//   }
-// }
+function specialQuestion(questionArr) {
+  var specialOdds = Math.ceil(Math.random() * 4);
+  if (specialOdds === 2) {
+    // change question at index to special question.
+    // give player item on correct answer.
+  }
+  else {
+    // normal question.
+  }
+}
 
 module.exports = Questions;

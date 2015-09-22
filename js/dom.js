@@ -15,8 +15,6 @@ $(document).ready(function () {
     characterSelectAudio.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_mario_a09.wav');
     characterSelectAudio.setAttribute('autoplay', 'autoplay');
 
-    // $.get();
-
     characterSelectAudio.addEventListener('load', function () {
       characterSelectAudio.Play();
     }, true);
@@ -79,8 +77,6 @@ $(document).ready(function () {
     selectMarioAudio.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_mario02.wav');
     selectMarioAudio.setAttribute('autoplay', 'autoplay');
 
-    // $.get();
-
     selectMarioAudio.addEventListener('load', function () {
       selectMarioAudio.Play();
     }, true);
@@ -94,9 +90,6 @@ $(document).ready(function () {
   // select luigi
   $('#luigi').click(function () {
     var player = luigi;
-    // var computerOne = mario;
-    // var computerTwo = toad;
-    // var computerThree = peach;
 
     $('#playerStart').html(player).addClass('playerCurrent');
 
@@ -117,8 +110,6 @@ $(document).ready(function () {
     selectLuigiAudio.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_luigi03.wav');
     selectLuigiAudio.setAttribute('autoplay', 'autoplay');
 
-    // $.get();
-
     selectLuigiAudio.addEventListener('load', function () {
       selectLuigiAudio.Play();
     }, true);
@@ -131,9 +122,6 @@ $(document).ready(function () {
 
   $('#toad').click(function () {
     var player = toad;
-    // var computerOne = mario;
-    // var computerTwo = luigi;
-    // var computerThree = peach;
 
     // place toad into playerStart
     $('#playerStart').html(player).addClass('playerCurrent');
@@ -155,8 +143,6 @@ $(document).ready(function () {
     selectToadAudio.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_toad03.wav');
     selectToadAudio.setAttribute('autoplay', 'autoplay');
 
-    // $.get();
-
     selectToadAudio.addEventListener('load', function () {
       selectToadAudio.Play();
     }, true);
@@ -169,9 +155,6 @@ $(document).ready(function () {
 
   $('#peach').click(function () {
     var player = peach;
-    // var computerOne = mario;
-    // var computerTwo = toad;
-    // var computerThree = luigi;
 
     // place peach into playerStart
     $('#playerStart').html(player).addClass('playerCurrent');
@@ -192,8 +175,6 @@ $(document).ready(function () {
     var selectPeachAudio = document.createElement('audio');
     selectPeachAudio.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_peach08.wav');
     selectPeachAudio.setAttribute('autoplay', 'autoplay');
-
-    // $.get();
 
     selectPeachAudio.addEventListener('load', function () {
       selectPeachAudio.Play();
@@ -326,7 +307,6 @@ $(document).ready(function () {
       marioFinishAudio.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_mario07.wav');
       marioFinishAudio.setAttribute('autoplay', 'autoplay');
 
-      // $.get();
 
       marioFinishAudio.addEventListener('load', function () {
         marioFinishAudio.Play();
@@ -338,7 +318,6 @@ $(document).ready(function () {
       luigiFinishAudio.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_luigi07.wav');
       luigiFinishAudio.setAttribute('autoplay', 'autoplay');
 
-      // $.get();
 
       luigiFinishAudio.addEventListener('load', function () {
         luigiFinishAudio.Play();
@@ -350,7 +329,6 @@ $(document).ready(function () {
       toadFinishAudio.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_toad07.wav');
       toadFinishAudio.setAttribute('autoplay', 'autoplay');
 
-      // $.get();
 
       toadFinishAudio.addEventListener('load', function () {
         toadFinishAudio.Play();
@@ -361,8 +339,6 @@ $(document).ready(function () {
       var peachFinishAudio = document.createElement('audio');
       peachFinishAudio.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/mk64/mk64_peach03.wav');
       peachFinishAudio.setAttribute('autoplay', 'autoplay');
-
-      // $.get();
 
       peachFinishAudio.addEventListener('load', function () {
         peachFinishAudio.Play();
@@ -380,8 +356,6 @@ $(document).ready(function () {
     var replayAudio = document.createElement('audio');
     replayAudio.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/sm64/sm64_mario_thank_you.wav');
     replayAudio.setAttribute('autoplay', 'autoplay');
-
-    // $.get();
 
     replayAudio.addEventListener('load', function () {
       replayAudio.Play();
