@@ -1,5 +1,7 @@
-function Item(effect) {
-  this.effect = effect;
+function Item() {
+  this.affectedPlayers = 0;
+  this.turnsInEffect = 0;
+  this.inFront = true;
 }
 
 var shell = new Item();
@@ -15,14 +17,21 @@ var star = new Item();
 
 Item.prototype.shell = function() {
   // stops closest opponent ahead for 1 turn
+  this.affectedPlayers = 1;
+  this.turnsInEffect = 1;
 };
 
 Item.prototype.blueShell = function() {
   // stops all opponents in front for 1 turn
+  this.affectedPlayers = 3;
+  this.turnsInEffect = 1;
 };
 
 Item.prototype.banana = function() {
   // stops closest oppenent behind for 1 turn
+  this.affectedPlayers = 1;
+  this.turnsInEffect = 1;
+  this.inFront = false;
 };
 
 // Item.prototype.mushroom = function() {
@@ -32,5 +41,6 @@ Item.prototype.banana = function() {
 //
 // Item.prototype.star = function() {
 //   // speeds up progression
+//   // possible to finish without answering all questions
 //   // negates effects of all other items for 2 turns
 // };
