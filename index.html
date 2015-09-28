@@ -18,7 +18,7 @@
       </video>
 
       <div class="titleRules">
-        <p class="rules instructions"><b>Rules/Instructions</b></p>
+        <p class="rules">Rules/Instructions</p>
         <p class="rules">The aim of the game is to beat the computer in a race by answering questions. First, you have to pick a player. Each player will go to their respective starting points and the first question will appear in the bottom right corner. You must answer questions correctly in order to advance. You do not move if the question is answered incorrectly. Click the button when you are ready.</p>
         <br>
       </div>
@@ -158,10 +158,15 @@
           <span class="fourthOption question-option"></span>
           <br><br>
 
+          <!-- Button to use item -->
+          <button id="useItem" class="useItem btn btn-warning">Use Item!</button>
+
           <!-- Button for advancing -->
           <input id="advance" class="btn-success advanceButton" type="button" value="Check your answer!">
         </div>
       </section>
+      <audio id="marioWin" src="http://themushroomkingdom.net/sounds/wav/mk64/mk64_mario07.wav" preload="auto"></audio>
+      <audio id="luigiWin" src="http://themushroomkingdom.net/sounds/wav/mk64/mk64_luigi07.wav" preload="auto"></audio>
 
     </container>
     <!-- END RACE ELEMENTS -->
@@ -192,18 +197,16 @@
 
 
 
- <!-- *** SCRIPTS *** -->
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js">
-  </script>
+    <!-- *** SCRIPTS *** -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
-  <script type="text/javascript" src="js/utility.js">
-  </script>
+    <script type="text/javascript" src="js/utility.js"></script>
 
-  <script type="text/javascript" src="js/AI.js">
-  </script>
+    <script type="text/javascript" src="js/items.js"></script>
 
-  <script type="text/javascript" src="js/dom.js">
-  </script>
+    <script type="text/javascript" src="js/AI.js"></script>
+
+    <script type="text/javascript" src="js/dom.js"></script>
 
   </body>
 </html>

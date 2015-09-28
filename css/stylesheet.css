@@ -71,6 +71,7 @@ section {
 /* Styling for advance button */
 .advanceButton {
   position: absolute;
+  display: block;
   top: 88%;
   height: 50px;
   width: 100%;
@@ -119,4 +120,16 @@ section {
 
 .instructions {
   font-size: 20px;
+}
+
+.useItem {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 0;
+  left: 150px;
+  margin-left: 45px;
+  margin-top: 50px;
+  color: black;
+  font-size: 200%;
 }
