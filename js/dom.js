@@ -366,4 +366,29 @@ $(document).ready(function () {
     $('audio').remove();
   });
 
+  // ---------------- //
+  // ** END REPLAY ** //
+  // ---------------- //
+
+  // ----------- //
+  // ITEM BUTTON //
+  // ----------- //
+  $('#useItem').click(function() {
+    switch (cachedItem.item) {
+      case 'shell':
+        Item.prototype.shell();
+        break;
+      case 'banana':
+        Item.prototype.banana();
+        break;
+      case 'blueShell':
+        Item.prototype.blueShell();
+        break;
+    }
+    cachedItem = '';
+    $('#useItem').hide();
+  });
+  // --------------------- //
+  // ** END ITEM BUTTON ** //
+  // --------------------- //
 });
