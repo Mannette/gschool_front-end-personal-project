@@ -1,3 +1,5 @@
+var special = false;
+
 // create question class
 function Questions (question, answers, rightAnswer) {
   this.question = question;
@@ -329,6 +331,12 @@ Questions.prototype.check = function () {
 // FUNCTIONS TO APPEND QUESTIONS TO DOM //
 // ------------------------------------ //
 function appendFirst () {
+  Questions.prototype.determineSpecial();
+
+  if (special) {
+    Item.prototype.getItem();
+  }
+
   $('#questions').html(questionArr[0].question);
 
   $('.question-option')[0].innerHTML = questionArr[0].answers[1];
@@ -341,6 +349,12 @@ function appendFirst () {
 }
 
 function appendSecond () {
+  Questions.prototype.determineSpecial();
+
+  if (special) {
+    Item.prototype.getItem();
+  }
+
   $('#questions').html(questionArr[1].question);
 
   $('.question-option')[0].innerHTML = questionArr[1].answers[1];
@@ -353,6 +367,12 @@ function appendSecond () {
 }
 
 function appendThird () {
+  Questions.prototype.determineSpecial();
+
+  if (special) {
+    Item.prototype.getItem();
+  }
+
   $('#questions').html(questionArr[2].question);
 
   $('.question-option')[0].innerHTML = questionArr[2].answers[1];
@@ -365,6 +385,12 @@ function appendThird () {
 }
 
 function appendFourth () {
+  Questions.prototype.determineSpecial();
+
+  if (special) {
+    Item.prototype.getItem();
+  }
+
   $('#questions').html(questionArr[3].question);
 
   $('.question-option')[0].innerHTML = questionArr[3].answers[1];
@@ -377,6 +403,12 @@ function appendFourth () {
 }
 
 function appendFifth () {
+  Questions.prototype.determineSpecial();
+
+  if (special) {
+    Item.prototype.getItem();
+  }
+
   $('#questions').html(questionArr[4].question);
 
   $('.question-option')[0].innerHTML = questionArr[4].answers[1];
@@ -389,6 +421,12 @@ function appendFifth () {
 }
 
 function appendSixth () {
+  Questions.prototype.determineSpecial();
+
+  if (special) {
+    Item.prototype.getItem();
+  }
+
   $('#questions').html(questionArr[5].question);
 
   $('.question-option')[0].innerHTML = questionArr[5].answers[1];
@@ -401,6 +439,12 @@ function appendSixth () {
 }
 
 function appendSeventh () {
+  Questions.prototype.determineSpecial();
+
+  if (special) {
+    Item.prototype.getItem();
+  }
+
   $('#questions').html(questionArr[6].question);
 
   $('.question-option')[0].innerHTML = questionArr[6].answers[1];
@@ -413,6 +457,12 @@ function appendSeventh () {
 }
 
 function appendEighth () {
+  Questions.prototype.determineSpecial();
+
+  if (special) {
+    Item.prototype.getItem();
+  }
+
   $('#questions').html(questionArr[7].question);
 
   $('.question-option')[0].innerHTML = questionArr[7].answers[1];
@@ -425,6 +475,12 @@ function appendEighth () {
 }
 
 function appendNinth () {
+  Questions.prototype.determineSpecial();
+
+  if (special) {
+    Item.prototype.getItem();
+  }
+
   $('#questions').html(questionArr[8].question);
 
   $('.question-option')[0].innerHTML = questionArr[8].answers[1];
@@ -463,23 +519,33 @@ function setDefault () {
   $('#character_select').hide();
   $('#startScreen').show();
   $('#clear').show();
+  $('#useItem').hide();
 }
 
 // ------------------ //
 // ** END DEFAULTS ** //
 // ------------------ //
 
+// *************************** //
+
+// ------------------ //
+// DETERMINE GET ITEM //
+// ------------------ //
 
 // on advance, determine if next question will be a 'special' question.
-function specialQuestion(questionArr) {
-  var specialOdds = Math.ceil(Math.random() * 4);
+Questions.prototype.determineSpecial = function() {
+  var specialOdds = Math.floor(Math.random() * 4);
+  console.log(specialOdds);
   if (specialOdds === 2) {
-    // change question at index to special question.
-    // give player item on correct answer.
+    $('#useItem').show();
+    special = true;
+    return special;
   }
-  else {
-    // normal question.
-  }
-}
+
+};
+
+// ------------------ //
+// ** END GET ITEM ** //
+// ------------------ //
 
 module.exports = Questions;
