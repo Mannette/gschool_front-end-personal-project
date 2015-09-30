@@ -1,18 +1,26 @@
 var ComputerPlayer = function (name) {
   this.name = name;
   this.hit = false;
+  this.counter = 0;
 };
 
 var cpuOne = new ComputerPlayer('cpu1');
 var cpuTwo = new ComputerPlayer('cpu2');
 var cpuThree = new ComputerPlayer('cpu3');
+// var cpuOneCounter = 0;
+// var cpuTwoCounter = 0;
+// var cpuThreeCounter = 0;
 
 // ------------------------------- //
 // ** COMPUTER ADVANCE FUNCTION ** //
 // ------------------------------- //
 ComputerPlayer.prototype.computerOneAdvance = function () {
   var advance = Math.round(Math.random() * 5);
-  if (!this.hit) {
+  if (this.hit) {
+    console.log('cpu1 hit!');
+    return this.hit = false;
+  } else if (!this.hit) {
+    console.log('cpu1 go!');
     if (advance !== 2) {
 
       // advance one block;
@@ -38,7 +46,11 @@ ComputerPlayer.prototype.computerOneAdvance = function () {
 
 ComputerPlayer.prototype.computerTwoAdvance = function () {
   var advance = Math.round(Math.random() * 4);
-  if (!this.hit) {
+  if (this.hit) {
+    console.log('cpu2 hit!');
+    return this.hit = false;
+  } else if (!this.hit) {
+    console.log('cpu2 go!');
     if (advance !== 2) {
 
       // advance one block;
@@ -64,7 +76,11 @@ ComputerPlayer.prototype.computerTwoAdvance = function () {
 
 ComputerPlayer.prototype.computerThreeAdvance = function () {
   var advance = Math.round(Math.random() * 6);
-  if (!this.hit) {
+  if (this.hit) {
+    console.log('cpu3 hit!');
+    return this.hit = false;
+  } else if (!this.hit) {
+    console.log('cpu3 go!');
     if (advance !== 2) {
 
       // advance one block;
