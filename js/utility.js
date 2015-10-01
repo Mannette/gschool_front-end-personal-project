@@ -549,5 +549,3 @@ Questions.prototype.determineSpecial = function() {
 // ------------------ //
 // ** END GET ITEM ** //
 // ------------------ //
-
-module.exports = Questions;
