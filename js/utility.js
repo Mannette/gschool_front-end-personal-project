@@ -520,6 +520,7 @@ function setDefault () {
   $('#startScreen').show();
   $('#clear').show();
   $('#useItem').hide();
+  $('#itemArea').hide();
 }
 
 // ------------------ //
@@ -537,6 +538,7 @@ Questions.prototype.determineSpecial = function() {
   var specialOdds = Math.floor(Math.random() * 4);
   console.log(specialOdds);
   if (specialOdds === 2) {
+    $('#itemArea').show();
     $('#useItem').show();
     special = true;
     return special;

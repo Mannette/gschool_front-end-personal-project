@@ -374,6 +374,8 @@ $(document).ready(function () {
   // ITEM BUTTON //
   // ----------- //
   $('#useItem').click(function() {
+    $('.itemBox').html('');
+    $('#itemArea').hide();
     switch (cachedItem.item) {
       case 'shell':
         Item.prototype.shell();

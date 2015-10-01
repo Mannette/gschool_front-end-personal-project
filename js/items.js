@@ -32,10 +32,9 @@ var star = new Item();
 
 var cachedItem = '';
 
-var playerPosition = $('.playerCurrent').attr('value');
-var cpuOnePosition = $('.computerOneCurrent').attr('value');
-var cpuTwoPosition = $('.computerTwoCurrent').attr('value');
-var cpuThreePosition = $('.computerThreeCurrent').attr('value');
+var shellPic = '<img class="image" src="images/greenshell.png">';
+var bananaPic = '<img class="image" src="images/banana.png">';
+var blueShellPic = '<img class="image" src="images/blueshell.jpg">';
 
 Item.prototype.shell = function() {
   console.log('shells!');
@@ -425,12 +424,15 @@ Item.prototype.getItem = function() {
   console.log(selected);
   switch (selected) {
     case 0:
+      $('.itemBox').html(shellPic);
       cachedItem = shell;
       break;
     case 1:
+      $('.itemBox').html(bananaPic);
       cachedItem = banana;
       break;
     case 2:
+      $('.itemBox').html(blueShellPic);
       cachedItem = blueShell;
       break;
   }
