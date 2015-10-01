@@ -32,54 +32,187 @@ var star = new Item();
 
 var cachedItem = '';
 
+var playerPosition = $('.playerCurrent').attr('value');
+var cpuOnePosition = $('.computerOneCurrent').attr('value');
+var cpuTwoPosition = $('.computerTwoCurrent').attr('value');
+var cpuThreePosition = $('.computerThreeCurrent').attr('value');
+
 Item.prototype.shell = function() {
   console.log('shells!');
 
   // determine if all computer players are ahead of player
   if (($('.computerOneCurrent').attr('value') >= $('.playerCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') >= $('.playerCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value'))) {
     // determine if computer one is closest
-    if ($('.computerOneCurrent').attr('value') - $('.playerCurrent').attr('value') < ($('.computerTwoCurrent').attr('value') - $('.playerCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') - $('.playerCurrent').attr('value'))) {
-      cpuOne.hit = true;
+    if ($('.computerOneCurrent').attr('value') < $('.computerTwoCurrent').attr('value') && $('.computerOneCurrent').attr('value') < $('.computerThreeCurrent').attr('value')) {
+        console.log('cpu1 hit');
+        cpuOne.hit = true;
     }
     // determine if computer two is closest
-    else if ($('.computerTwoCurrent').attr('value') - $('.playerCurrent').attr('value') < ($('.computerOneCurrent').attr('value') - $('.playerCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') - $('.playerCurrent').attr('value'))) {
-      cpuTwo.hit = true;
+    else if ($('.computerTwoCurrent').attr('value') < $('.computerOneCurrent').attr('value') && $('.computerTwoCurrent').attr('value') < $('.computerThreeCurrent').attr('value')) {
+        console.log('cpu2 hit');
+        cpuTwo.hit = true;
     }
     // determine if computer three is closest
-    else if ($('.computerThreeCurrent').attr('value') - $('.playerCurrent').attr('value') < ($('.computerTwoCurrent').attr('value') - $('.playerCurrent').attr('value')) && ($('.computerOneCurrent').attr('value') - $('.playerCurrent').attr('value'))) {
-      cpuThree.hit = true;
+    else if ($('.computerThreeCurrent').attr('value') < $('.computerTwoCurrent').attr('value') && $('.computerThreeCurrent').attr('value') < $('.computerOneCurrent').attr('value')) {
+        console.log('cpu3 hit');
+        cpuThree.hit = true;
+    }
+    // if two players are in equal positions
+    else if(($('.computerOneCurrent').attr('value') === $('.computerTwoCurrent').attr('value')) && ($('.computerOneCurrent').attr('value') < $('.computerThreeCurrent').attr('value'))) {
+      var randomPick = Math.floor(Math.random() * 2);
+      switch (randomPick) {
+        case 0:
+          console.log('cpu1 hit');
+          cpuOne.hit = true;
+          break;
+        case 1:
+          console.log('cpu2 hit');
+          cpuTwo.hit = true;
+          break;
+      }
+    } else if (($('.computerOneCurrent').attr('value') === $('.computerThreeCurrent').attr('value')) && ($('.computerOneCurrent').attr('value') < $('.computerTwoCurrent').attr('value'))) {
+      var randomPick = Math.floor(Math.random() * 2);
+      switch (randomPick) {
+        case 0:
+          console.log('cpu1 hit');
+          cpuOne.hit = true;
+          break;
+        case 1:
+          console.log('cpu3 hit');
+          cpuThree.hit = true;
+          break;
+      }
+    } else if(($('.computerTwoCurrent').attr('value') === $('.computerThreeCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') < $('.computerOneCurrent').attr('value'))) {
+      var randomPick = Math.floor(Math.random() * 2);
+      switch (randomPick) {
+        case 0:
+          console.log('cpu2 hit');
+          cpuTwo.hit = true;
+          break;
+        case 1:
+          console.log('cpu3 hit');
+          cpuThree.hit = true;
+          break;
+      }
+    }
+    // if all players are in equal positions pick random player to hit
+    else {
+      var randomPick = Math.floor(Math.random() * 3);
+      switch (randomPick) {
+        case 0:
+          console.log('cpu1 hit');
+          cpuOne.hit = true;
+          break;
+        case 1:
+          console.log('cpu2 hit');
+          cpuTwo.hit = true;
+          break;
+        case 2:
+          console.log('cpu3 hit');
+          cpuThree.hit = true;
+          break;
+      }
     }
   }
   // determine which computer player is closest if computer one and computer two are ahead of player
-  else if (($('.computerOneCurrent').attr('value') >= $('.playerCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') >= $('.playerCurrent').attr('value'))) {
-    if (($('.computerOneCurrent').attr('value') - $('.playerCurrent').attr('value')) < ($('.computerTwoCurrent').attr('value') - $('.playerCurrent').attr('value'))) {
-      cpuOne.hit = true;
-    } else {
-      cpuTwo.hit = true;
-    }
+  else if ($('.computerOneCurrent').attr('value') >= $('.playerCurrent').attr('value') && $('.computerTwoCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
+      if (($('.computerOneCurrent').attr('value') > $('.computerTwoCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') === $('.playerCurrent').attr('value'))) {
+        console.log('cpu1 hit');
+        cpuOne.hit = true;
+      } else if (($('.computerTwoCurrent').attr('value') > $('.computerOneCurrent').attr('value')) && ($('.computerOneCurrent').attr('value') === $('.playerCurrent').attr('value'))) {
+        console.log('cpu2 hit');
+        cpuTwo.hit = true;
+      } else if (($('.computerOneCurrent').attr('value') > $('.playerCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') > $('.playerCurrent').attr('value'))) {
+        if (($('.computerOneCurrent').attr('value') - $('.playerCurrent').attr('value')) < ($('.computerTwoCurrent').attr('value') - $('.playerCurrent').attr('value'))) {
+          console.log('cpu1 hit');
+          cpuOne.hit = true;
+        } else {
+          console.log('cpu2 hit');
+          cpuTwo.hit = true;
+        }
+      } else {
+        var randomPick = Math.floor(Math.random() * 2);
+        switch (randomPick) {
+          case 0:
+            console.log('cpu1 hit');
+            cpuOne.hit = true;
+            break;
+          case 1:
+            console.log('cpu2 hit');
+            cpuTwo.hit = true;
+            break;
+        }
+      }
   }
   // determine which computer player is closest if computer one and computer three are ahead of player
-  else if (($('.computerOneCurrent').attr('value') >= $('.playerCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value'))) {
-    if (($('.computerOneCurrent').attr('value') - $('.playerCurrent').attr('value')) < ($('.computerThreeCurrent').attr('value') - $('.playerCurrent').attr('value'))) {
-      cpuOne.hit = true;
-    } else {
-      cpuThree.hit = true;
-    }
+  else if ($('.computerOneCurrent').attr('value') >= $('.playerCurrent').attr('value') && $('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
+      if (($('.computerOneCurrent').attr('value') > $('.computerThreeCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') === $('.playerCurrent').attr('value'))) {
+        console.log('cpu1 hit');
+        cpuOne.hit = true;
+      } else if (($('.computerThreeCurrent').attr('value') > $('.computerOneCurrent').attr('value')) && ($('.computerOneCurrent').attr('value') === $('.playerCurrent').attr('value'))) {
+        console.log('cpu3 hit');
+        cpuThree.hit = true;
+      } else if (($('.computerThreeCurrent').attr('value') > $('.playerCurrent').attr('value')) && ($('.computerOneCurrent').attr('value') > $('.playerCurrent').attr('value'))) {
+        if (($('.computerOneCurrent').attr('value') - $('.playerCurrent').attr('value')) < ($('.computerThreeCurrent').attr('value') - $('.playerCurrent').attr('value'))) {
+          console.log('cpu1 hit');
+          cpuOne.hit = true;
+        } else {
+          console.log('cpu3 hit');
+          cpuThree.hit = true;
+        }
+      } else {
+        var randomPick = Math.floor(Math.random() * 2);
+        switch (randomPick) {
+          case 0:
+            console.log('cpu1 hit');
+            cpuOne.hit = true;
+            break;
+          case 1:
+            console.log('cpu3 hit');
+            cpuThree.hit = true;
+            break;
+        }
+      }
   }
   // determine which computer player is closest if computer two and computer three are ahead of player
-  else if (($('.computerTwoCurrent').attr('value') >= $('.playerCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value'))) {
-    if (($('.computerTwoCurrent').attr('value') - $('.playerCurrent').attr('value')) < ($('.computerThreeCurrent').attr('value') - $('.playerCurrent').attr('value'))) {
+  else if ($('.computerTwoCurrent').attr('value') >= $('.playerCurrent').attr('value') && $('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
+    if (($('.computerTwoCurrent').attr('value') > $('.computerThreeCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') === $('.playerCurrent').attr('value'))) {
+      console.log('cpu2 hit');
       cpuTwo.hit = true;
-    } else {
+    } else if (($('.computerThreeCurrent').attr('value') > $('.computerTwoCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') === $('.playerCurrent').attr('value'))) {
+      console.log('cpu3 hit');
       cpuThree.hit = true;
+    } else if (($('.computerTwoCurrent').attr('value') > $('.playerCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') > $('.playerCurrent').attr('value'))) {
+      if (($('.computerTwoCurrent').attr('value') - $('.playerCurrent').attr('value')) < ($('.computerThreeCurrent').attr('value') - $('.playerCurrent').attr('value'))) {
+        console.log('cpu2 hit');
+        cpuTwo.hit = true;
+      } else {
+        console.log('cpu3 hit');
+        cpuThree.hit = true;
+      }
+    } else {
+      var randomPick = Math.floor(Math.random() * 2);
+      switch (randomPick) {
+        case 0:
+          console.log('cpu2 hit');
+          cpuTwo.hit = true;
+          break;
+        case 1:
+          console.log('cpu3 hit');
+          cpuThree.hit = true;
+          break;
+      }
     }
   }
   // determine if individual computer players are ahead of player
   else if ($('.computerOneCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
+    console.log('cpu1 hit');
     cpuOne.hit = true;
   } else if ($('.computerTwoCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
+    console.log('cpu2 hit');
     cpuTwo.hit = true;
   } else if ($('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
+    console.log('cpu3 hit');
     cpuThree.hit = true;
   } else {
     alert('You Missed!');
@@ -89,24 +222,31 @@ Item.prototype.shell = function() {
 Item.prototype.blueShell = function() {
   console.log('blue shells!');
 
-  if ($('.computerOneCurrent').attr('value') && $('.computerTwoCurrent').attr('value') && $('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
+  if (($('.computerOneCurrent').attr('value') >= $('.playerCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') >= $('.playerCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value'))) {
+    console.log('all hit');
     cpuOne.hit = true;
     cpuTwo.hit = true;
     cpuThree.hit = true;
-  } else if ($('.computerOneCurrent').attr('value') && $('.computerTwoCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
+  } else if (($('.computerOneCurrent').attr('value') >= $('.playerCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') >= $('.playerCurrent').attr('value'))) {
+    console.log('cpu1 & 2 hit');
     cpuOne.hit = true;
     cpuTwo.hit = true;
-  } else if ($('.computerOneCurrent').attr('value') && $('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
+  } else if (($('.computerOneCurrent').attr('value') >= $('.playerCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value'))) {
+    console.log('cpu1 & 3 hit');
     cpuOne.hit = true;
     cpuThree.hit = true;
-  } else if ($('.computerTwoCurrent').attr('value') && $('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
+  } else if (($('.computerTwoCurrent').attr('value') >= $('.playerCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value'))) {
+    console.log('cpu2 & 3 hit');
     cpuTwo.hit = true;
     cpuThree.hit = true;
   } else if ($('.computerOneCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
+    console.log('cpu1 hit');
     cpuOne.hit = true;
   } else if ($('.computerTwoCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
+    console.log('cpu2 hit');
     cpuTwo.hit = true;
   } else if ($('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
+    console.log('cpu3 hit');
     cpuThree.hit = true;
   } else {
     alert('You missed!');
@@ -119,48 +259,150 @@ Item.prototype.banana = function() {
   // determine if all computer players are behind player
   if (($('.computerOneCurrent').attr('value') <= $('.playerCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') <= $('.playerCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') <= $('.playerCurrent').attr('value'))) {
     // determine if computer one is closest
-    if ($('.computerOneCurrent').attr('value') - $('.playerCurrent').attr('value') > ($('.computerTwoCurrent').attr('value') - $('.playerCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') - $('.playerCurrent').attr('value'))) {
+    if (($('.computerOneCurrent').attr('value') > $('.computerTwoCurrent').attr('value')) && ($('.computerOneCurrent').attr('value') > $('.computerThreeCurrent').attr('value'))) {
+      console.log('cpu1 hit');
       cpuOne.hit = true;
     }
     // determine if computer two is closest
-    else if ($('.computerTwoCurrent').attr('value') - $('.playerCurrent').attr('value') > ($('.computerOneCurrent').attr('value') - $('.playerCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') - $('.playerCurrent').attr('value'))) {
+    else if (($('.computerTwoCurrent').attr('value') > $('.computerOneCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') > $('.computerThreeCurrent').attr('value'))) {
+      console.log('cpu2 hit');
       cpuTwo.hit = true;
     }
     // determine if computer three is closest
-    else if ($('.computerThreeCurrent').attr('value') - $('.playerCurrent').attr('value') > ($('.computerTwoCurrent').attr('value') - $('.playerCurrent').attr('value')) && ($('.computerOneCurrent').attr('value') - $('.playerCurrent').attr('value'))) {
+    else if (($('.computerThreeCurrent').attr('value') > $('.computerOneCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') > $('.computerTwoCurrent').attr('value'))) {
+      console.log('cpu3 hit');
       cpuThree.hit = true;
+    }
+    // randomly pick which computer player will be hit if two are in equal positions but all are still behind player
+    else if (($('.computerOneCurrent').attr('value') === $('.computerTwoCurrent').attr('value')) && ($('.computerOneCurrent').attr('value') > $('.computerThreeCurrent').attr('value'))) {
+      var randomPick = Math.floor(Math.random() * 2);
+      switch (randomPick) {
+        case 0:
+          console.log('cpu1 hit');
+          cpuOne.hit = true;
+          break;
+        case 1:
+          console.log('cpu2 hit');
+          cpuTwo.hit = true;
+          break;
+      }
+    } else if (($('.computerOneCurrent').attr('value') === $('.computerThreeCurrent').attr('value')) && ($('.computerOneCurrent').attr('value') > $('.computerTwoCurrent').attr('value'))) {
+      var randomPick = Math.floor(Math.random() * 2);
+      switch (randomPick) {
+        case 0:
+          console.log('cpu1 hit');
+          cpuOne.hit = true;
+          break;
+        case 1:
+          console.log('cpu3 hit');
+          cpuThree.hit = true;
+          break;
+      }
+    } else if (($('.computerTwoCurrent').attr('value') === $('.computerThreeCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') > $('.computerOneCurrent').attr('value'))) {
+      var randomPick = Math.floor(Math.random() * 2);
+      switch (randomPick) {
+        case 0:
+          console.log('cpu2 hit');
+          cpuTwo.hit = true;
+          break;
+        case 1:
+          console.log('cpu3 hit');
+          cpuThree.hit = true;
+          break;
+      }
+    } else {
+      var randomPick = Math.floor(Math.random() * 3);
+      switch (randomPick) {
+        case 0:
+          console.log('cpu1 hit');
+          cpuOne.hit = true;
+          break;
+        case 1:
+          console.log('cpu2 hit');
+          cpuTwo.hit = true;
+          break;
+        case 2:
+          console.log('cpu3 hit');
+          cpuThree.hit = true;
+          break;
+      }
     }
   }
   // determine which computer player is closest if computer one and computer two are behind player
-  else if (($('.computerOneCurrent').attr('value') <= $('.playerCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') <= $('.playerCurrent').attr('value'))) {
-    if (($('.computerOneCurrent').attr('value') - $('.playerCurrent').attr('value')) > ($('.computerTwoCurrent').attr('value') - $('.playerCurrent').attr('value'))) {
+  else if ($('.computerOneCurrent').attr('value') <= $('.playerCurrent').attr('value') && $('.computerTwoCurrent').attr('value') <= $('.playerCurrent').attr('value')) {
+    if ($('.computerOneCurrent').attr('value') > $('.computerTwoCurrent').attr('value')) {
+      console.log('cpu1 hit');
       cpuOne.hit = true;
-    } else {
+    } else if ($('.computerTwoCurrent').attr('value') > $('.computerOneCurrent').attr('value')) {
+      console.log('cpu2 hit');
       cpuTwo.hit = true;
+    } else {
+      var randomPick = Math.floor(Math.random() * 2);
+      switch (randomPick) {
+        case 0:
+          console.log('cpu1 hit');
+          cpuOne.hit = true;
+          break;
+        case 1:
+          console.log('cpu2 hit');
+          cpuTwo.hit = true;
+          break;
+      }
     }
   }
   // determine which computer player is closest if computer one and computer three are behind player
-  else if (($('.computerOneCurrent').attr('value') <= $('.playerCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') <= $('.playerCurrent').attr('value'))) {
-    if (($('.computerOneCurrent').attr('value') - $('.playerCurrent').attr('value')) > ($('.computerThreeCurrent').attr('value') - $('.playerCurrent').attr('value'))) {
+  else if ($('.computerOneCurrent').attr('value') <= $('.playerCurrent').attr('value') && $('.computerThreeCurrent').attr('value') <= $('.playerCurrent').attr('value')) {
+    if ($('.computerOneCurrent').attr('value') > $('.computerThreeCurrent').attr('value')) {
+      console.log('cpu1 hit');
       cpuOne.hit = true;
-    } else {
+    } else if ($('.computerThreeCurrent').attr('value') > $('.computerOneCurrent').attr('value')) {
+      console.log('cpu3 hit');
       cpuThree.hit = true;
+    } else {
+      var randomPick = Math.floor(Math.random() * 2);
+      switch (randomPick) {
+        case 0:
+          console.log('cpu1 hit');
+          cpuOne.hit = true;
+          break;
+        case 1:
+          console.log('cpu3 hit');
+          cpuThree.hit = true;
+          break;
+      }
     }
   }
   // determine which computer player is closest if computer two and computer three are behind player
-  else if (($('.computerTwoCurrent').attr('value') <= $('.playerCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') <= $('.playerCurrent').attr('value'))) {
-    if (($('.computerTwoCurrent').attr('value') - $('.playerCurrent').attr('value')) > ($('.computerThreeCurrent').attr('value') - $('.playerCurrent').attr('value'))) {
+  else if ($('.computerTwoCurrent').attr('value') <= $('.playerCurrent').attr('value') && $('.computerThreeCurrent').attr('value') <= $('.playerCurrent').attr('value')) {
+    if ($('.computerTwoCurrent').attr('value') > $('.computerThreeCurrent').attr('value')) {
+      console.log('cpu2 hit');
       cpuTwo.hit = true;
-    } else {
+    } else if ($('.computerThreeCurrent').attr('value') > $('.computerTwoCurrent').attr('value')) {
+      console.log('cpu3 hit');
       cpuThree.hit = true;
+    } else {
+      var randomPick = Math.floor(Math.random() * 2);
+      switch (randomPick) {
+        case 0:
+          console.log('cpu2 hit');
+          cpuTwo.hit = true;
+          break;
+        case 1:
+          console.log('cpu3 hit');
+          cpuThree.hit = true;
+          break;
+      }
     }
   }
   // determine if individual computer players are behind player
   else if ($('.computerOneCurrent').attr('value') <= $('.playerCurrent').attr('value')) {
+    console.log('cpu1 hit');
     cpuOne.hit = true;
   } else if ($('.computerTwoCurrent').attr('value') <= $('.playerCurrent').attr('value')) {
+    console.log('cpu2 hit');
     cpuTwo.hit = true;
   } else if ($('.computerThreeCurrent').attr('value') <= $('.playerCurrent').attr('value')) {
+    console.log('cpu3 hit');
     cpuThree.hit = true;
   } else {
     alert('You Missed!');
