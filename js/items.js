@@ -45,16 +45,19 @@ Item.prototype.shell = function() {
     if ($('.computerOneCurrent').attr('value') < $('.computerTwoCurrent').attr('value') && $('.computerOneCurrent').attr('value') < $('.computerThreeCurrent').attr('value')) {
         console.log('cpu1 hit');
         cpuOne.hit = true;
+        $('.computerOneCurrent').addClass('hit');
     }
     // determine if computer two is closest
     else if ($('.computerTwoCurrent').attr('value') < $('.computerOneCurrent').attr('value') && $('.computerTwoCurrent').attr('value') < $('.computerThreeCurrent').attr('value')) {
         console.log('cpu2 hit');
         cpuTwo.hit = true;
+        $('.computerTwoCurrent').addClass('hit');
     }
     // determine if computer three is closest
     else if ($('.computerThreeCurrent').attr('value') < $('.computerTwoCurrent').attr('value') && $('.computerThreeCurrent').attr('value') < $('.computerOneCurrent').attr('value')) {
         console.log('cpu3 hit');
         cpuThree.hit = true;
+        $('.computerThreeCurrent').addClass('hit');
     }
     // if two players are in equal positions
     else if(($('.computerOneCurrent').attr('value') === $('.computerTwoCurrent').attr('value')) && ($('.computerOneCurrent').attr('value') < $('.computerThreeCurrent').attr('value'))) {
@@ -63,10 +66,12 @@ Item.prototype.shell = function() {
         case 0:
           console.log('cpu1 hit');
           cpuOne.hit = true;
+          $('.computerOneCurrent').addClass('hit');
           break;
         case 1:
           console.log('cpu2 hit');
           cpuTwo.hit = true;
+          $('.computerTwoCurrent').addClass('hit');
           break;
       }
     } else if (($('.computerOneCurrent').attr('value') === $('.computerThreeCurrent').attr('value')) && ($('.computerOneCurrent').attr('value') < $('.computerTwoCurrent').attr('value'))) {
@@ -75,10 +80,12 @@ Item.prototype.shell = function() {
         case 0:
           console.log('cpu1 hit');
           cpuOne.hit = true;
+          $('.computerOneCurrent').addClass('hit');
           break;
         case 1:
           console.log('cpu3 hit');
           cpuThree.hit = true;
+          $('.computerThreeCurrent').addClass('hit');
           break;
       }
     } else if(($('.computerTwoCurrent').attr('value') === $('.computerThreeCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') < $('.computerOneCurrent').attr('value'))) {
@@ -87,10 +94,12 @@ Item.prototype.shell = function() {
         case 0:
           console.log('cpu2 hit');
           cpuTwo.hit = true;
+          $('.computerTwoCurrent').addClass('hit');
           break;
         case 1:
           console.log('cpu3 hit');
           cpuThree.hit = true;
+          $('.computerThreeCurrent').addClass('hit');
           break;
       }
     }
@@ -101,14 +110,17 @@ Item.prototype.shell = function() {
         case 0:
           console.log('cpu1 hit');
           cpuOne.hit = true;
+          $('.computerOneCurrent').addClass('hit');
           break;
         case 1:
           console.log('cpu2 hit');
           cpuTwo.hit = true;
+          $('.computerTwoCurrent').addClass('hit');
           break;
         case 2:
           console.log('cpu3 hit');
           cpuThree.hit = true;
+          $('.computerThreeCurrent').addClass('hit');
           break;
       }
     }
@@ -118,16 +130,20 @@ Item.prototype.shell = function() {
       if (($('.computerOneCurrent').attr('value') > $('.computerTwoCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') === $('.playerCurrent').attr('value'))) {
         console.log('cpu1 hit');
         cpuOne.hit = true;
+        $('.computerOneCurrent').addClass('hit');
       } else if (($('.computerTwoCurrent').attr('value') > $('.computerOneCurrent').attr('value')) && ($('.computerOneCurrent').attr('value') === $('.playerCurrent').attr('value'))) {
         console.log('cpu2 hit');
         cpuTwo.hit = true;
+        $('.computerTwoCurrent').addClass('hit');
       } else if (($('.computerOneCurrent').attr('value') > $('.playerCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') > $('.playerCurrent').attr('value'))) {
         if (($('.computerOneCurrent').attr('value') - $('.playerCurrent').attr('value')) < ($('.computerTwoCurrent').attr('value') - $('.playerCurrent').attr('value'))) {
           console.log('cpu1 hit');
           cpuOne.hit = true;
+          $('.computerOneCurrent').addClass('hit');
         } else {
           console.log('cpu2 hit');
           cpuTwo.hit = true;
+          $('.computerTwoCurrent').addClass('hit');
         }
       } else {
         var randomPick = Math.floor(Math.random() * 2);
@@ -135,10 +151,12 @@ Item.prototype.shell = function() {
           case 0:
             console.log('cpu1 hit');
             cpuOne.hit = true;
+            $('.computerOneCurrent').addClass('hit');
             break;
           case 1:
             console.log('cpu2 hit');
             cpuTwo.hit = true;
+            $('.computerTwoCurrent').addClass('hit');
             break;
         }
       }
@@ -148,16 +166,20 @@ Item.prototype.shell = function() {
       if (($('.computerOneCurrent').attr('value') > $('.computerThreeCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') === $('.playerCurrent').attr('value'))) {
         console.log('cpu1 hit');
         cpuOne.hit = true;
+        $('.computerOneCurrent').addClass('hit');
       } else if (($('.computerThreeCurrent').attr('value') > $('.computerOneCurrent').attr('value')) && ($('.computerOneCurrent').attr('value') === $('.playerCurrent').attr('value'))) {
         console.log('cpu3 hit');
         cpuThree.hit = true;
+        $('.computerThreeCurrent').addClass('hit');
       } else if (($('.computerThreeCurrent').attr('value') > $('.playerCurrent').attr('value')) && ($('.computerOneCurrent').attr('value') > $('.playerCurrent').attr('value'))) {
         if (($('.computerOneCurrent').attr('value') - $('.playerCurrent').attr('value')) < ($('.computerThreeCurrent').attr('value') - $('.playerCurrent').attr('value'))) {
           console.log('cpu1 hit');
           cpuOne.hit = true;
+          $('.computerOneCurrent').addClass('hit');
         } else {
           console.log('cpu3 hit');
           cpuThree.hit = true;
+          $('.computerThreeCurrent').addClass('hit');
         }
       } else {
         var randomPick = Math.floor(Math.random() * 2);
@@ -165,10 +187,12 @@ Item.prototype.shell = function() {
           case 0:
             console.log('cpu1 hit');
             cpuOne.hit = true;
+            $('.computerOneCurrent').addClass('hit');
             break;
           case 1:
             console.log('cpu3 hit');
             cpuThree.hit = true;
+            $('.computerThreeCurrent').addClass('hit');
             break;
         }
       }
@@ -178,16 +202,20 @@ Item.prototype.shell = function() {
     if (($('.computerTwoCurrent').attr('value') > $('.computerThreeCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') === $('.playerCurrent').attr('value'))) {
       console.log('cpu2 hit');
       cpuTwo.hit = true;
+      $('.computerTwoCurrent').addClass('hit');
     } else if (($('.computerThreeCurrent').attr('value') > $('.computerTwoCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') === $('.playerCurrent').attr('value'))) {
       console.log('cpu3 hit');
       cpuThree.hit = true;
+      $('.computerThreeCurrent').addClass('hit');
     } else if (($('.computerTwoCurrent').attr('value') > $('.playerCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') > $('.playerCurrent').attr('value'))) {
       if (($('.computerTwoCurrent').attr('value') - $('.playerCurrent').attr('value')) < ($('.computerThreeCurrent').attr('value') - $('.playerCurrent').attr('value'))) {
         console.log('cpu2 hit');
         cpuTwo.hit = true;
+        $('.computerTwoCurrent').addClass('hit');
       } else {
         console.log('cpu3 hit');
         cpuThree.hit = true;
+        $('.computerThreeCurrent').addClass('hit');
       }
     } else {
       var randomPick = Math.floor(Math.random() * 2);
@@ -195,10 +223,12 @@ Item.prototype.shell = function() {
         case 0:
           console.log('cpu2 hit');
           cpuTwo.hit = true;
+          $('.computerTwoCurrent').addClass('hit');
           break;
         case 1:
           console.log('cpu3 hit');
           cpuThree.hit = true;
+          $('.computerThreeCurrent').addClass('hit');
           break;
       }
     }
@@ -207,12 +237,15 @@ Item.prototype.shell = function() {
   else if ($('.computerOneCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
     console.log('cpu1 hit');
     cpuOne.hit = true;
+    $('.computerOneCurrent').addClass('hit');
   } else if ($('.computerTwoCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
     console.log('cpu2 hit');
     cpuTwo.hit = true;
+    $('.computerTwoCurrent').addClass('hit');
   } else if ($('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
     console.log('cpu3 hit');
     cpuThree.hit = true;
+    $('.computerThreeCurrent').addClass('hit');
   } else {
     alert('You Missed!');
   }
@@ -224,29 +257,41 @@ Item.prototype.blueShell = function() {
   if (($('.computerOneCurrent').attr('value') >= $('.playerCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') >= $('.playerCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value'))) {
     console.log('all hit');
     cpuOne.hit = true;
+    $('.computerOneCurrent').addClass('hit');
     cpuTwo.hit = true;
+    $('.computerTwoCurrent').addClass('hit');
     cpuThree.hit = true;
+    $('.computerThreeCurrent').addClass('hit');
   } else if (($('.computerOneCurrent').attr('value') >= $('.playerCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') >= $('.playerCurrent').attr('value'))) {
     console.log('cpu1 & 2 hit');
     cpuOne.hit = true;
+    $('.computerOneCurrent').addClass('hit');
     cpuTwo.hit = true;
+    $('.computerTwoCurrent').addClass('hit');
   } else if (($('.computerOneCurrent').attr('value') >= $('.playerCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value'))) {
     console.log('cpu1 & 3 hit');
     cpuOne.hit = true;
+    $('.computerOneCurrent').addClass('hit');
     cpuThree.hit = true;
+    $('.computerThreeCurrent').addClass('hit');
   } else if (($('.computerTwoCurrent').attr('value') >= $('.playerCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value'))) {
     console.log('cpu2 & 3 hit');
     cpuTwo.hit = true;
+    $('.computerTwoCurrent').addClass('hit');
     cpuThree.hit = true;
+    $('.computerThreeCurrent').addClass('hit');
   } else if ($('.computerOneCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
     console.log('cpu1 hit');
     cpuOne.hit = true;
+    $('.computerOneCurrent').addClass('hit');
   } else if ($('.computerTwoCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
     console.log('cpu2 hit');
     cpuTwo.hit = true;
+    $('.computerTwoCurrent').addClass('hit');
   } else if ($('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
     console.log('cpu3 hit');
     cpuThree.hit = true;
+    $('.computerThreeCurrent').addClass('hit');
   } else {
     alert('You missed!');
   }
@@ -261,16 +306,19 @@ Item.prototype.banana = function() {
     if (($('.computerOneCurrent').attr('value') > $('.computerTwoCurrent').attr('value')) && ($('.computerOneCurrent').attr('value') > $('.computerThreeCurrent').attr('value'))) {
       console.log('cpu1 hit');
       cpuOne.hit = true;
+      $('.computerOneCurrent').addClass('hit');
     }
     // determine if computer two is closest
     else if (($('.computerTwoCurrent').attr('value') > $('.computerOneCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') > $('.computerThreeCurrent').attr('value'))) {
       console.log('cpu2 hit');
       cpuTwo.hit = true;
+      $('.computerTwoCurrent').addClass('hit');
     }
     // determine if computer three is closest
     else if (($('.computerThreeCurrent').attr('value') > $('.computerOneCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') > $('.computerTwoCurrent').attr('value'))) {
       console.log('cpu3 hit');
       cpuThree.hit = true;
+      $('.computerThreeCurrent').addClass('hit');
     }
     // randomly pick which computer player will be hit if two are in equal positions but all are still behind player
     else if (($('.computerOneCurrent').attr('value') === $('.computerTwoCurrent').attr('value')) && ($('.computerOneCurrent').attr('value') > $('.computerThreeCurrent').attr('value'))) {
@@ -279,10 +327,12 @@ Item.prototype.banana = function() {
         case 0:
           console.log('cpu1 hit');
           cpuOne.hit = true;
+          $('.computerOneCurrent').addClass('hit');
           break;
         case 1:
           console.log('cpu2 hit');
           cpuTwo.hit = true;
+          $('.computerTwoCurrent').addClass('hit');
           break;
       }
     } else if (($('.computerOneCurrent').attr('value') === $('.computerThreeCurrent').attr('value')) && ($('.computerOneCurrent').attr('value') > $('.computerTwoCurrent').attr('value'))) {
@@ -291,10 +341,12 @@ Item.prototype.banana = function() {
         case 0:
           console.log('cpu1 hit');
           cpuOne.hit = true;
+          $('.computerOneCurrent').addClass('hit');
           break;
         case 1:
           console.log('cpu3 hit');
           cpuThree.hit = true;
+          $('.computerThreeCurrent').addClass('hit');
           break;
       }
     } else if (($('.computerTwoCurrent').attr('value') === $('.computerThreeCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') > $('.computerOneCurrent').attr('value'))) {
@@ -303,10 +355,12 @@ Item.prototype.banana = function() {
         case 0:
           console.log('cpu2 hit');
           cpuTwo.hit = true;
+          $('.computerTwoCurrent').addClass('hit');
           break;
         case 1:
           console.log('cpu3 hit');
           cpuThree.hit = true;
+          $('.computerThreeCurrent').addClass('hit');
           break;
       }
     } else {
@@ -315,14 +369,17 @@ Item.prototype.banana = function() {
         case 0:
           console.log('cpu1 hit');
           cpuOne.hit = true;
+          $('.computerOneCurrent').addClass('hit');
           break;
         case 1:
           console.log('cpu2 hit');
           cpuTwo.hit = true;
+          $('.computerTwoCurrent').addClass('hit');
           break;
         case 2:
           console.log('cpu3 hit');
           cpuThree.hit = true;
+          $('.computerThreeCurrent').addClass('hit');
           break;
       }
     }
@@ -332,19 +389,23 @@ Item.prototype.banana = function() {
     if ($('.computerOneCurrent').attr('value') > $('.computerTwoCurrent').attr('value')) {
       console.log('cpu1 hit');
       cpuOne.hit = true;
+      $('.computerOneCurrent').addClass('hit');
     } else if ($('.computerTwoCurrent').attr('value') > $('.computerOneCurrent').attr('value')) {
       console.log('cpu2 hit');
       cpuTwo.hit = true;
+      $('.computerTwoCurrent').addClass('hit');
     } else {
       var randomPick = Math.floor(Math.random() * 2);
       switch (randomPick) {
         case 0:
           console.log('cpu1 hit');
           cpuOne.hit = true;
+          $('.computerOneCurrent').addClass('hit');
           break;
         case 1:
           console.log('cpu2 hit');
           cpuTwo.hit = true;
+          $('.computerTwoCurrent').addClass('hit');
           break;
       }
     }
@@ -354,19 +415,23 @@ Item.prototype.banana = function() {
     if ($('.computerOneCurrent').attr('value') > $('.computerThreeCurrent').attr('value')) {
       console.log('cpu1 hit');
       cpuOne.hit = true;
+      $('.computerOneCurrent').addClass('hit');
     } else if ($('.computerThreeCurrent').attr('value') > $('.computerOneCurrent').attr('value')) {
       console.log('cpu3 hit');
       cpuThree.hit = true;
+      $('.computerThreeCurrent').addClass('hit');
     } else {
       var randomPick = Math.floor(Math.random() * 2);
       switch (randomPick) {
         case 0:
           console.log('cpu1 hit');
           cpuOne.hit = true;
+          $('.computerOneCurrent').addClass('hit');
           break;
         case 1:
           console.log('cpu3 hit');
           cpuThree.hit = true;
+          $('.computerThreeCurrent').addClass('hit');
           break;
       }
     }
@@ -376,19 +441,23 @@ Item.prototype.banana = function() {
     if ($('.computerTwoCurrent').attr('value') > $('.computerThreeCurrent').attr('value')) {
       console.log('cpu2 hit');
       cpuTwo.hit = true;
+      $('.computerTwoCurrent').addClass('hit');
     } else if ($('.computerThreeCurrent').attr('value') > $('.computerTwoCurrent').attr('value')) {
       console.log('cpu3 hit');
       cpuThree.hit = true;
+      $('.computerThreeCurrent').addClass('hit');
     } else {
       var randomPick = Math.floor(Math.random() * 2);
       switch (randomPick) {
         case 0:
           console.log('cpu2 hit');
           cpuTwo.hit = true;
+          $('.computerTwoCurrent').addClass('hit');
           break;
         case 1:
           console.log('cpu3 hit');
           cpuThree.hit = true;
+          $('.computerThreeCurrent').addClass('hit');
           break;
       }
     }
@@ -397,12 +466,15 @@ Item.prototype.banana = function() {
   else if ($('.computerOneCurrent').attr('value') <= $('.playerCurrent').attr('value')) {
     console.log('cpu1 hit');
     cpuOne.hit = true;
+    $('.computerOneCurrent').addClass('hit');
   } else if ($('.computerTwoCurrent').attr('value') <= $('.playerCurrent').attr('value')) {
     console.log('cpu2 hit');
     cpuTwo.hit = true;
+    $('.computerTwoCurrent').addClass('hit');
   } else if ($('.computerThreeCurrent').attr('value') <= $('.playerCurrent').attr('value')) {
     console.log('cpu3 hit');
     cpuThree.hit = true;
+    $('.computerThreeCurrent').addClass('hit');
   } else {
     alert('You Missed!');
   }
