@@ -1,4 +1,4 @@
-function Item(affectedPlayers, turnsInEffect, inFront, item) {
+function Item (affectedPlayers, turnsInEffect, inFront, item) {
   this.affectedPlayers = affectedPlayers;
   this.turnsInEffect = turnsInEffect;
   this.inFront = inFront;
@@ -37,25 +37,21 @@ var bananaPic = '<img class="image" src="images/banana.png">';
 var blueShellPic = '<img class="image" src="images/blueshell.jpg">';
 
 Item.prototype.shell = function() {
-  console.log('shells!');
 
   // determine if all computer players are ahead of player
   if (($('.computerOneCurrent').attr('value') >= $('.playerCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') >= $('.playerCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value'))) {
     // determine if computer one is closest
     if ($('.computerOneCurrent').attr('value') < $('.computerTwoCurrent').attr('value') && $('.computerOneCurrent').attr('value') < $('.computerThreeCurrent').attr('value')) {
-        console.log('cpu1 hit');
         cpuOne.hit = true;
         $('.computerOneCurrent').addClass('hit');
     }
     // determine if computer two is closest
     else if ($('.computerTwoCurrent').attr('value') < $('.computerOneCurrent').attr('value') && $('.computerTwoCurrent').attr('value') < $('.computerThreeCurrent').attr('value')) {
-        console.log('cpu2 hit');
         cpuTwo.hit = true;
         $('.computerTwoCurrent').addClass('hit');
     }
     // determine if computer three is closest
     else if ($('.computerThreeCurrent').attr('value') < $('.computerTwoCurrent').attr('value') && $('.computerThreeCurrent').attr('value') < $('.computerOneCurrent').attr('value')) {
-        console.log('cpu3 hit');
         cpuThree.hit = true;
         $('.computerThreeCurrent').addClass('hit');
     }
@@ -64,12 +60,10 @@ Item.prototype.shell = function() {
       var randomPick = Math.floor(Math.random() * 2);
       switch (randomPick) {
         case 0:
-          console.log('cpu1 hit');
           cpuOne.hit = true;
           $('.computerOneCurrent').addClass('hit');
           break;
         case 1:
-          console.log('cpu2 hit');
           cpuTwo.hit = true;
           $('.computerTwoCurrent').addClass('hit');
           break;
@@ -78,12 +72,10 @@ Item.prototype.shell = function() {
       var randomPick = Math.floor(Math.random() * 2);
       switch (randomPick) {
         case 0:
-          console.log('cpu1 hit');
           cpuOne.hit = true;
           $('.computerOneCurrent').addClass('hit');
           break;
         case 1:
-          console.log('cpu3 hit');
           cpuThree.hit = true;
           $('.computerThreeCurrent').addClass('hit');
           break;
@@ -92,12 +84,10 @@ Item.prototype.shell = function() {
       var randomPick = Math.floor(Math.random() * 2);
       switch (randomPick) {
         case 0:
-          console.log('cpu2 hit');
           cpuTwo.hit = true;
           $('.computerTwoCurrent').addClass('hit');
           break;
         case 1:
-          console.log('cpu3 hit');
           cpuThree.hit = true;
           $('.computerThreeCurrent').addClass('hit');
           break;
@@ -108,17 +98,14 @@ Item.prototype.shell = function() {
       var randomPick = Math.floor(Math.random() * 3);
       switch (randomPick) {
         case 0:
-          console.log('cpu1 hit');
           cpuOne.hit = true;
           $('.computerOneCurrent').addClass('hit');
           break;
         case 1:
-          console.log('cpu2 hit');
           cpuTwo.hit = true;
           $('.computerTwoCurrent').addClass('hit');
           break;
         case 2:
-          console.log('cpu3 hit');
           cpuThree.hit = true;
           $('.computerThreeCurrent').addClass('hit');
           break;
@@ -128,20 +115,16 @@ Item.prototype.shell = function() {
   // determine which computer player is closest if computer one and computer two are ahead of player
   else if ($('.computerOneCurrent').attr('value') >= $('.playerCurrent').attr('value') && $('.computerTwoCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
       if (($('.computerOneCurrent').attr('value') > $('.computerTwoCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') === $('.playerCurrent').attr('value'))) {
-        console.log('cpu1 hit');
         cpuOne.hit = true;
         $('.computerOneCurrent').addClass('hit');
       } else if (($('.computerTwoCurrent').attr('value') > $('.computerOneCurrent').attr('value')) && ($('.computerOneCurrent').attr('value') === $('.playerCurrent').attr('value'))) {
-        console.log('cpu2 hit');
         cpuTwo.hit = true;
         $('.computerTwoCurrent').addClass('hit');
       } else if (($('.computerOneCurrent').attr('value') > $('.playerCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') > $('.playerCurrent').attr('value'))) {
         if (($('.computerOneCurrent').attr('value') - $('.playerCurrent').attr('value')) < ($('.computerTwoCurrent').attr('value') - $('.playerCurrent').attr('value'))) {
-          console.log('cpu1 hit');
           cpuOne.hit = true;
           $('.computerOneCurrent').addClass('hit');
         } else {
-          console.log('cpu2 hit');
           cpuTwo.hit = true;
           $('.computerTwoCurrent').addClass('hit');
         }
@@ -149,12 +132,10 @@ Item.prototype.shell = function() {
         var randomPick = Math.floor(Math.random() * 2);
         switch (randomPick) {
           case 0:
-            console.log('cpu1 hit');
             cpuOne.hit = true;
             $('.computerOneCurrent').addClass('hit');
             break;
           case 1:
-            console.log('cpu2 hit');
             cpuTwo.hit = true;
             $('.computerTwoCurrent').addClass('hit');
             break;
@@ -164,20 +145,16 @@ Item.prototype.shell = function() {
   // determine which computer player is closest if computer one and computer three are ahead of player
   else if ($('.computerOneCurrent').attr('value') >= $('.playerCurrent').attr('value') && $('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
       if (($('.computerOneCurrent').attr('value') > $('.computerThreeCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') === $('.playerCurrent').attr('value'))) {
-        console.log('cpu1 hit');
         cpuOne.hit = true;
         $('.computerOneCurrent').addClass('hit');
       } else if (($('.computerThreeCurrent').attr('value') > $('.computerOneCurrent').attr('value')) && ($('.computerOneCurrent').attr('value') === $('.playerCurrent').attr('value'))) {
-        console.log('cpu3 hit');
         cpuThree.hit = true;
         $('.computerThreeCurrent').addClass('hit');
       } else if (($('.computerThreeCurrent').attr('value') > $('.playerCurrent').attr('value')) && ($('.computerOneCurrent').attr('value') > $('.playerCurrent').attr('value'))) {
         if (($('.computerOneCurrent').attr('value') - $('.playerCurrent').attr('value')) < ($('.computerThreeCurrent').attr('value') - $('.playerCurrent').attr('value'))) {
-          console.log('cpu1 hit');
           cpuOne.hit = true;
           $('.computerOneCurrent').addClass('hit');
         } else {
-          console.log('cpu3 hit');
           cpuThree.hit = true;
           $('.computerThreeCurrent').addClass('hit');
         }
@@ -185,12 +162,10 @@ Item.prototype.shell = function() {
         var randomPick = Math.floor(Math.random() * 2);
         switch (randomPick) {
           case 0:
-            console.log('cpu1 hit');
             cpuOne.hit = true;
             $('.computerOneCurrent').addClass('hit');
             break;
           case 1:
-            console.log('cpu3 hit');
             cpuThree.hit = true;
             $('.computerThreeCurrent').addClass('hit');
             break;
@@ -200,20 +175,16 @@ Item.prototype.shell = function() {
   // determine which computer player is closest if computer two and computer three are ahead of player
   else if ($('.computerTwoCurrent').attr('value') >= $('.playerCurrent').attr('value') && $('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
     if (($('.computerTwoCurrent').attr('value') > $('.computerThreeCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') === $('.playerCurrent').attr('value'))) {
-      console.log('cpu2 hit');
       cpuTwo.hit = true;
       $('.computerTwoCurrent').addClass('hit');
     } else if (($('.computerThreeCurrent').attr('value') > $('.computerTwoCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') === $('.playerCurrent').attr('value'))) {
-      console.log('cpu3 hit');
       cpuThree.hit = true;
       $('.computerThreeCurrent').addClass('hit');
     } else if (($('.computerTwoCurrent').attr('value') > $('.playerCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') > $('.playerCurrent').attr('value'))) {
       if (($('.computerTwoCurrent').attr('value') - $('.playerCurrent').attr('value')) < ($('.computerThreeCurrent').attr('value') - $('.playerCurrent').attr('value'))) {
-        console.log('cpu2 hit');
         cpuTwo.hit = true;
         $('.computerTwoCurrent').addClass('hit');
       } else {
-        console.log('cpu3 hit');
         cpuThree.hit = true;
         $('.computerThreeCurrent').addClass('hit');
       }
@@ -221,12 +192,10 @@ Item.prototype.shell = function() {
       var randomPick = Math.floor(Math.random() * 2);
       switch (randomPick) {
         case 0:
-          console.log('cpu2 hit');
           cpuTwo.hit = true;
           $('.computerTwoCurrent').addClass('hit');
           break;
         case 1:
-          console.log('cpu3 hit');
           cpuThree.hit = true;
           $('.computerThreeCurrent').addClass('hit');
           break;
@@ -235,15 +204,12 @@ Item.prototype.shell = function() {
   }
   // determine if individual computer players are ahead of player
   else if ($('.computerOneCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
-    console.log('cpu1 hit');
     cpuOne.hit = true;
     $('.computerOneCurrent').addClass('hit');
   } else if ($('.computerTwoCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
-    console.log('cpu2 hit');
     cpuTwo.hit = true;
     $('.computerTwoCurrent').addClass('hit');
   } else if ($('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
-    console.log('cpu3 hit');
     cpuThree.hit = true;
     $('.computerThreeCurrent').addClass('hit');
   } else {
@@ -252,10 +218,8 @@ Item.prototype.shell = function() {
 };
 
 Item.prototype.blueShell = function() {
-  console.log('blue shells!');
 
   if (($('.computerOneCurrent').attr('value') >= $('.playerCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') >= $('.playerCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value'))) {
-    console.log('all hit');
     cpuOne.hit = true;
     $('.computerOneCurrent').addClass('hit');
     cpuTwo.hit = true;
@@ -263,33 +227,27 @@ Item.prototype.blueShell = function() {
     cpuThree.hit = true;
     $('.computerThreeCurrent').addClass('hit');
   } else if (($('.computerOneCurrent').attr('value') >= $('.playerCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') >= $('.playerCurrent').attr('value'))) {
-    console.log('cpu1 & 2 hit');
     cpuOne.hit = true;
     $('.computerOneCurrent').addClass('hit');
     cpuTwo.hit = true;
     $('.computerTwoCurrent').addClass('hit');
   } else if (($('.computerOneCurrent').attr('value') >= $('.playerCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value'))) {
-    console.log('cpu1 & 3 hit');
     cpuOne.hit = true;
     $('.computerOneCurrent').addClass('hit');
     cpuThree.hit = true;
     $('.computerThreeCurrent').addClass('hit');
   } else if (($('.computerTwoCurrent').attr('value') >= $('.playerCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value'))) {
-    console.log('cpu2 & 3 hit');
     cpuTwo.hit = true;
     $('.computerTwoCurrent').addClass('hit');
     cpuThree.hit = true;
     $('.computerThreeCurrent').addClass('hit');
   } else if ($('.computerOneCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
-    console.log('cpu1 hit');
     cpuOne.hit = true;
     $('.computerOneCurrent').addClass('hit');
   } else if ($('.computerTwoCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
-    console.log('cpu2 hit');
     cpuTwo.hit = true;
     $('.computerTwoCurrent').addClass('hit');
   } else if ($('.computerThreeCurrent').attr('value') >= $('.playerCurrent').attr('value')) {
-    console.log('cpu3 hit');
     cpuThree.hit = true;
     $('.computerThreeCurrent').addClass('hit');
   } else {
@@ -298,25 +256,21 @@ Item.prototype.blueShell = function() {
 };
 
 Item.prototype.banana = function() {
-  console.log('bananas!');
 
   // determine if all computer players are behind player
   if (($('.computerOneCurrent').attr('value') <= $('.playerCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') <= $('.playerCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') <= $('.playerCurrent').attr('value'))) {
     // determine if computer one is closest
     if (($('.computerOneCurrent').attr('value') > $('.computerTwoCurrent').attr('value')) && ($('.computerOneCurrent').attr('value') > $('.computerThreeCurrent').attr('value'))) {
-      console.log('cpu1 hit');
       cpuOne.hit = true;
       $('.computerOneCurrent').addClass('hit');
     }
     // determine if computer two is closest
     else if (($('.computerTwoCurrent').attr('value') > $('.computerOneCurrent').attr('value')) && ($('.computerTwoCurrent').attr('value') > $('.computerThreeCurrent').attr('value'))) {
-      console.log('cpu2 hit');
       cpuTwo.hit = true;
       $('.computerTwoCurrent').addClass('hit');
     }
     // determine if computer three is closest
     else if (($('.computerThreeCurrent').attr('value') > $('.computerOneCurrent').attr('value')) && ($('.computerThreeCurrent').attr('value') > $('.computerTwoCurrent').attr('value'))) {
-      console.log('cpu3 hit');
       cpuThree.hit = true;
       $('.computerThreeCurrent').addClass('hit');
     }
@@ -325,12 +279,10 @@ Item.prototype.banana = function() {
       var randomPick = Math.floor(Math.random() * 2);
       switch (randomPick) {
         case 0:
-          console.log('cpu1 hit');
           cpuOne.hit = true;
           $('.computerOneCurrent').addClass('hit');
           break;
         case 1:
-          console.log('cpu2 hit');
           cpuTwo.hit = true;
           $('.computerTwoCurrent').addClass('hit');
           break;
@@ -339,12 +291,10 @@ Item.prototype.banana = function() {
       var randomPick = Math.floor(Math.random() * 2);
       switch (randomPick) {
         case 0:
-          console.log('cpu1 hit');
           cpuOne.hit = true;
           $('.computerOneCurrent').addClass('hit');
           break;
         case 1:
-          console.log('cpu3 hit');
           cpuThree.hit = true;
           $('.computerThreeCurrent').addClass('hit');
           break;
@@ -353,12 +303,10 @@ Item.prototype.banana = function() {
       var randomPick = Math.floor(Math.random() * 2);
       switch (randomPick) {
         case 0:
-          console.log('cpu2 hit');
           cpuTwo.hit = true;
           $('.computerTwoCurrent').addClass('hit');
           break;
         case 1:
-          console.log('cpu3 hit');
           cpuThree.hit = true;
           $('.computerThreeCurrent').addClass('hit');
           break;
@@ -367,17 +315,14 @@ Item.prototype.banana = function() {
       var randomPick = Math.floor(Math.random() * 3);
       switch (randomPick) {
         case 0:
-          console.log('cpu1 hit');
           cpuOne.hit = true;
           $('.computerOneCurrent').addClass('hit');
           break;
         case 1:
-          console.log('cpu2 hit');
           cpuTwo.hit = true;
           $('.computerTwoCurrent').addClass('hit');
           break;
         case 2:
-          console.log('cpu3 hit');
           cpuThree.hit = true;
           $('.computerThreeCurrent').addClass('hit');
           break;
@@ -387,23 +332,19 @@ Item.prototype.banana = function() {
   // determine which computer player is closest if computer one and computer two are behind player
   else if ($('.computerOneCurrent').attr('value') <= $('.playerCurrent').attr('value') && $('.computerTwoCurrent').attr('value') <= $('.playerCurrent').attr('value')) {
     if ($('.computerOneCurrent').attr('value') > $('.computerTwoCurrent').attr('value')) {
-      console.log('cpu1 hit');
       cpuOne.hit = true;
       $('.computerOneCurrent').addClass('hit');
     } else if ($('.computerTwoCurrent').attr('value') > $('.computerOneCurrent').attr('value')) {
-      console.log('cpu2 hit');
       cpuTwo.hit = true;
       $('.computerTwoCurrent').addClass('hit');
     } else {
       var randomPick = Math.floor(Math.random() * 2);
       switch (randomPick) {
         case 0:
-          console.log('cpu1 hit');
           cpuOne.hit = true;
           $('.computerOneCurrent').addClass('hit');
           break;
         case 1:
-          console.log('cpu2 hit');
           cpuTwo.hit = true;
           $('.computerTwoCurrent').addClass('hit');
           break;
@@ -413,23 +354,19 @@ Item.prototype.banana = function() {
   // determine which computer player is closest if computer one and computer three are behind player
   else if ($('.computerOneCurrent').attr('value') <= $('.playerCurrent').attr('value') && $('.computerThreeCurrent').attr('value') <= $('.playerCurrent').attr('value')) {
     if ($('.computerOneCurrent').attr('value') > $('.computerThreeCurrent').attr('value')) {
-      console.log('cpu1 hit');
       cpuOne.hit = true;
       $('.computerOneCurrent').addClass('hit');
     } else if ($('.computerThreeCurrent').attr('value') > $('.computerOneCurrent').attr('value')) {
-      console.log('cpu3 hit');
       cpuThree.hit = true;
       $('.computerThreeCurrent').addClass('hit');
     } else {
       var randomPick = Math.floor(Math.random() * 2);
       switch (randomPick) {
         case 0:
-          console.log('cpu1 hit');
           cpuOne.hit = true;
           $('.computerOneCurrent').addClass('hit');
           break;
         case 1:
-          console.log('cpu3 hit');
           cpuThree.hit = true;
           $('.computerThreeCurrent').addClass('hit');
           break;
@@ -439,23 +376,19 @@ Item.prototype.banana = function() {
   // determine which computer player is closest if computer two and computer three are behind player
   else if ($('.computerTwoCurrent').attr('value') <= $('.playerCurrent').attr('value') && $('.computerThreeCurrent').attr('value') <= $('.playerCurrent').attr('value')) {
     if ($('.computerTwoCurrent').attr('value') > $('.computerThreeCurrent').attr('value')) {
-      console.log('cpu2 hit');
       cpuTwo.hit = true;
       $('.computerTwoCurrent').addClass('hit');
     } else if ($('.computerThreeCurrent').attr('value') > $('.computerTwoCurrent').attr('value')) {
-      console.log('cpu3 hit');
       cpuThree.hit = true;
       $('.computerThreeCurrent').addClass('hit');
     } else {
       var randomPick = Math.floor(Math.random() * 2);
       switch (randomPick) {
         case 0:
-          console.log('cpu2 hit');
           cpuTwo.hit = true;
           $('.computerTwoCurrent').addClass('hit');
           break;
         case 1:
-          console.log('cpu3 hit');
           cpuThree.hit = true;
           $('.computerThreeCurrent').addClass('hit');
           break;
@@ -464,15 +397,12 @@ Item.prototype.banana = function() {
   }
   // determine if individual computer players are behind player
   else if ($('.computerOneCurrent').attr('value') <= $('.playerCurrent').attr('value')) {
-    console.log('cpu1 hit');
     cpuOne.hit = true;
     $('.computerOneCurrent').addClass('hit');
   } else if ($('.computerTwoCurrent').attr('value') <= $('.playerCurrent').attr('value')) {
-    console.log('cpu2 hit');
     cpuTwo.hit = true;
     $('.computerTwoCurrent').addClass('hit');
   } else if ($('.computerThreeCurrent').attr('value') <= $('.playerCurrent').attr('value')) {
-    console.log('cpu3 hit');
     cpuThree.hit = true;
     $('.computerThreeCurrent').addClass('hit');
   } else {
@@ -493,7 +423,6 @@ Item.prototype.banana = function() {
 
 Item.prototype.getItem = function() {
   var selected = Math.floor(Math.random() * 3);
-  console.log(selected);
   switch (selected) {
     case 0:
       $('.itemBox').html(shellPic);

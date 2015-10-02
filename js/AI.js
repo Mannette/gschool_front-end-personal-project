@@ -17,11 +17,8 @@ var cpuThree = new ComputerPlayer('cpu3');
 ComputerPlayer.prototype.computerOneAdvance = function () {
   var advance = Math.round(Math.random() * 5);
   if (this.hit) {
-    console.log('cpu1 hit!');
-    // $('.computerOneCurrent').addClass('hit');
     return this.hit = false;
   } else if (!this.hit) {
-    console.log('cpu1 go!');
     $('.computerOneCurrent').removeClass('hit');
     if (advance !== 2) {
 
@@ -49,11 +46,8 @@ ComputerPlayer.prototype.computerOneAdvance = function () {
 ComputerPlayer.prototype.computerTwoAdvance = function () {
   var advance = Math.round(Math.random() * 4);
   if (this.hit) {
-    console.log('cpu2 hit!');
-    // $('.computerTwoCurrent').addClass('hit');
     return this.hit = false;
   } else if (!this.hit) {
-    console.log('cpu2 go!');
     $('.computerTwoCurrent').removeClass('hit');
     if (advance !== 2) {
 
@@ -81,11 +75,8 @@ ComputerPlayer.prototype.computerTwoAdvance = function () {
 ComputerPlayer.prototype.computerThreeAdvance = function () {
   var advance = Math.round(Math.random() * 6);
   if (this.hit) {
-    console.log('cpu3 hit!');
-    // $('.computerThreeCurrent').addClass('hit');
     return this.hit = false;
   } else if (!this.hit) {
-    console.log('cpu3 go!');
     $('.computerThreeCurrent').removeClass('hit');
     if (advance !== 2) {
 
